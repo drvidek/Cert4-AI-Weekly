@@ -40,5 +40,5 @@ Some limitations with both approaches:
 *** IF YOU HAVE TIME (10-15 minutes) ***
 Create a new scene, add Terrain (3D Object > Terrain)
 - In the terrain settings, reduce the width & depth to 20 or so
-- Make some gentle hills and slopes on the terrain with the brush mode, using 'Set Height'
-Add a NavMesh surface object and set up as before, add a new Agent object, and use the 'NavigateBetweenWaypoints' script to demonstrate the agent moving smoothly over the complex terrain
+- Make some gentle hills and slopes on the terrain with the brush mode, using 'Raise or Lower Terrain'
+- Add a NavMesh surface object and set up as before, add a new Agent object, and use the 'NavigateBetweenWaypoints' script to demonstrate the agent moving smoothly over the complex terrain

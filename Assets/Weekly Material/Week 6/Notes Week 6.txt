@@ -1,0 +1,58 @@
+Start of lesson:
+- Have learners create a new 2D project called "AI Turrent"
+
+What are some senses and information we use in real life to determine
+
+We're going to make a turrent which (in theory) has to shoot targets before they get too close to it.
+For our purposes we're just going to make the turret work, and manually move targets around in the scene view to test.
+
+First go into the Project Settings > Physics2D and turn off "Queries Hit Triggers" - this will stop 2D raycasts from hitting triggers, they will only hit colliders.
+
+Create the turret:
+-Turret (empty parent)
+    - Pivot (empty for now, will rotate)
+        - 2D Sprite Triangle (scale Y to 2)
+        - Gun (empty for now, will spawn bullets)
+
+Make 2 prefabs:
+- Target (empty parent)
+    - Dynamic sprite (circle, on Rigidbody set Gravity Scale to 0, create a tag 'Target' and give it to this object)
+
+- Bullet (empty parent)
+    - Rigidbody2D (Gravity Scale to 0)
+        - Sprite (circle, .5 scale)
+        - CircleCollider2D (radius .25, trigger)
+
+Create the Gun script, attach it to the Gun object. Give it the Bullet prefab.
+
+Create LookAtTarget script, apply to the Pivot. Add a Target prefab to the scene and assign it as the target. Demonstrate how you can move the target at the turret follows it.
+
+"What happens if we need more than one target?"
+
+Create a new object, name it 'TargetList', nest in the Turrent parent, give it a CircleCollider2D and make it a trigger. Give a large radius.
+
+Write the 'TargetList' script. Attach it to the object we just made. Add another Target prefab to the scene, and demonstrate the list changing as they move in and out of the trigger.
+
+Write the 'LookAtFirstTarget' script. You can copy/paste the LookAt method if you want to.
+
+On the Pivot, emove or disable the 'LookAtTarget' component, add the new script, and assign the TargetList object in the slot.
+
+Demonstrate the turret now looks at whatever the first target on the list is.
+
+"What might be smarter than this?" - attacking the nearest target
+
+We're going to have to *iterate* through the whole list and determine which target is closest - this is an example of an Algorithm!
+
+Write the 'LookAtNearest' script. Attach to the Pivot, disable the other components, connect the TargetList object again.
+
+Demonstrate the turret now shoots at the closest target.
+
+"What feels unfair or even janky?" - immediate targeting
+
+Write the "RotateTowardsTarget" script. Attach to the Pivot, disable the other components, connect the TargetList object again.
+
+End of lesson:
+- Challenge - add walls to the environment (2D Objects > Physics > Static Sprite), make the turret only shoot the nearest target which is also not protected by a wall
+    - Will need to inject a raycast into the iteration to check if there's a wall between the turret and the target
+- Review together next week, or if there's lots of time do in the last part of class and share answers/solutions
+- Demonstrate by moving the targets closer, further, behind the wall, and move the wall out of the way.

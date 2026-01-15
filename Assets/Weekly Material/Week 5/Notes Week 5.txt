@@ -1,0 +1,38 @@
+Start of lesson:
+- Have learners create a new 3D project called "Navigation Maze"
+- Install the ProBuilder package
+- Go to Project Settings > Player > Active Input Handling and set it to 'Both' 
+
+Today we're going to look more closely at NavMesh components and ways we can configure our pathfinding.
+
+Open the Navigation window (Windows > AI > Navigation) and dock it somewhere
+
+Make 4 simple materials - the floor, a door/gate, and two agents.
+
+Create a Plane, scale it to 10x. 15 mins to use ProBuilder to make a SIMPLE "maze", with at least one ramp/staircase up to a higher level (feel free to show them the maze in this project)
+
+Add a NavMesh Surface to the scene, set it up and bake it. Add a Capsule, add a Nav Agent component. Probably increase the speed to around 10.
+
+Write the 'NavigateToMouse' script. Attatch it to the capsule. Demonstrate clicking in the scene and the agent will navigate there.
+
+AGENT TYPES:
+Open the Navigation window. Add a new Agent type (Giant). Set the Name, Radius, Height, and Step Height. Add a second NavMesh Surface to the scene, set it to the Giant type, and bake it.
+
+Note how the mesh is different - maybe a giant can't go down some narrow corridors, or they can step up over a wall.
+
+Create a Giant by scaling a duplicate of the human agent. In the Agent component, change the Agent Type to Giant, and reduce the speed to 4.
+
+Click in the scene to demonstrate the two agents taking different routes to get to the same destination.
+
+NAV LINKS:
+
+
+NAV OBSTACLES:
+
+
+NAV MODIFIER VOLUMES:
+
+
+
+End of lesson:
+- Combine the simple waypoints with the 
