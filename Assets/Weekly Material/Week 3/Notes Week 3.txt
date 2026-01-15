@@ -1,0 +1,15 @@
+
+Start of lesson:
+- Have learners create a new 2D project called 'Simple 2D Waypoints'
+
+First do the 'MoveTowardsObject' script as a kind of programming refresher. Demonstrate it works in scene.
+
+Take that foundation, and expand it into the 'MoveBetweenWaypoints' script.
+- "We need to track more than one position - does anyone remember a way we can track more than one thing in a variable?"
+- Ask learners what they remember about arrays.
+
+Write the script and demonstrate it working.
+
+Create a second set of waypoints and a second agent, and use a different speed value to demonstrate reusing the script for multiple different things.
+
+Next week we'll put this in 3D and explore some pros and cons of this soultion.

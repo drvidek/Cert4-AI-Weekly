@@ -1,0 +1,44 @@
+Start of lesson:
+- Have learners create a new 3D project called "IntroToNavMesh"
+
+In a scene, set up the waypoints just like last week but in 3D
+- Create a plane, and a capsule, and at least 3 waypoints, demonstrate it works in 3D
+- Place a wall in between 2 of the waypoints and show the player just moves right through
+    - Could also show the player clipping through the floor and floating over the ground without perfect waypoint placement
+
+Why/when might you use this approach:
+- Super simple and very versatile, works in all directions
+- Quick prototyping
+- Moving platforms or obstacles
+- Games without walls/complex geometry (e.g. tower defence, shoot-em-ups)
+
+For this, we need a solution which will tell our agent where they can and can't walk - NavMesh
+- Go through the slides
+
+Create the NavMesh surface object in scene, set 'Use Geometry' to 'Physics Colliders' and bake
+- Point out how the capsule and the wall leave holes in the mesh (we will fix the capsule later)
+
+Create the NPCNavMeshDirect object and add the Agent component
+
+Write the 'NavigateToObject' script
+- Point out how little code is required - the agent handles all movement, speed, distance, etc
+
+Create a waypoint object and set it as the nav target. Show the agent automatically moves towards a target destination without any extra code.
+
+Duplicate the wall, move it between the agent and the destination. Play again, show the agent moves through the wall - "why did that happen?"
+- Because we have to rebake the mesh!
+- Do that and show the agent moves around the wall.
+
+Now make the 'NavigateBetweenWaypoints' script by combining our two approaches
+- Remember to re-bake the mesh
+- Now we have an agent who moves on a set path and avoids obstacles
+- point out how the waypoints don't need perfect placement, they just need to be close to the NavMesh surface
+
+Some limitations with both approaches:
+- Does not account for a moving target (e.g. following the player)
+
+*** IF YOU HAVE TIME (10-15 minutes) ***
+Create a new scene, add Terrain (3D Object > Terrain)
+- In the terrain settings, reduce the width & depth to 20 or so
+- Make some gentle hills and slopes on the terrain with the brush mode, using 'Set Height'
+Add a NavMesh surface object and set up as before, add a new Agent object, and use the 'NavigateBetweenWaypoints' script to demonstrate the agent moving smoothly over the complex terrain
