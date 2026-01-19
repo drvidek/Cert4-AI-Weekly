@@ -208,6 +208,8 @@ public class SmartBlobAI : MonoBehaviour
     }
 
     // Safely return to the idle/walk loop without resetting it if it's currently active
+    // This function is only necessary because of how we're managing our State Machine (running functions every Update)
+    // A more sophistocated machine could avoid this problem but this is a totally fine workaround for us here
     void ReturnToIdle()
     {
         if (stateCurrent != State.Idle && stateCurrent != State.Walk)

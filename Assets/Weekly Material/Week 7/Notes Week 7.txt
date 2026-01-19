@@ -27,7 +27,8 @@ Make a prefab variant of the Blob, called 'BlobAI'. Write the 'BlobAI' script. A
 
 Demonstrate the script working, manually change the size of the player blob and show the AI blob reacting differently to being bigger or smaller.
 
-// This might be way too much content, see how you go for time //
+
+// This might be way too much content, see how you go for time, can finish next week //
 
 At the moment, we just have the AI blobs responding to one thing - the player. But what if we want them to all respond to each other?
 We're going to upgrade our blobs to be aware of their surroundings, and make a choice based on what they find.
