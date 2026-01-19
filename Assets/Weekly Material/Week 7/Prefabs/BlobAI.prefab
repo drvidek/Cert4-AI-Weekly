@@ -81,10 +81,8 @@ MonoBehaviour:
   walkSpeed: 1.5
   huntSpeed: 3
   fleeSpeed: 2.5
-  wanderRange: 10
+  wanderRadius: 10
   awarenessRange: 5
-  safetyRange: 7
+  disengageRange: 7
   durationIdleMin: 0.5
   durationIdleMax: 1.5
-  player: {fileID: 0}
-  durationIdleCurrent: 0

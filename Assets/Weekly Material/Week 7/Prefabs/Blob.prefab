@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlobSize
   radius: 0.5
+  randomRadius: 0
 --- !u!114 &8626286650535518107
 MonoBehaviour:
   m_ObjectHideFlags: 0

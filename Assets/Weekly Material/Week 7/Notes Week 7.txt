@@ -1,6 +1,9 @@
 
 Start of lesson:
 - Have learners create a new 2D project called 'A Game About Blobs'
+- Go to Project Settings > Player > Active Input Handling and set it to 'Both' 
+
+"Last week we made an AI turret which had just one behaviour - choose a target to aim at. Today we're going to make a game with AI that chooses different behaviour depending on what's happening in game."
 
 Create a prefab, 'Blob'. Add a dynamic sprite child object. Set the Sprite Renderer to 'Draw Mode' - Sliced. Add a 'Blob' tag and apply it on both objects.
 
@@ -8,6 +11,33 @@ Write the 'BlobSize' script. Demonstrate it working. Add the 'OnValidate' and sh
 
 Write the BlobCollision script. Add it to the dynamic sprite.
 
-Add two Blob prefabs to the scene, and make one larger than the other through the BlobSize component. 
+Add two Blob prefabs to the scene, and make one larger than the other through the BlobSize component (or use the randomise toggle)
 
 Demostrate the BlobCollision script working by manually moving the blobs into each other. (Colour will make it easier to see which Blob is "eaten")
+
+Challenge:
+- Write a simple script to control a blob with player inputs
+- Give them 5 minutes - remind them we have no walls so no need for physics
+
+Attach the player script to one of the blobs and demonstrate it working.
+
+Go back to the slides to talk about state machines. Design our state machine in Draw.IO, as a flowchart.
+
+Make a prefab variant of the Blob, called 'BlobAI'. Write the 'BlobAI' script. Attach it to the dynamic sprite in the variant.
+
+Demonstrate the script working, manually change the size of the player blob and show the AI blob reacting differently to being bigger or smaller.
+
+// This might be way too much content, see how you go for time //
+
+At the moment, we just have the AI blobs responding to one thing - the player. But what if we want them to all respond to each other?
+We're going to upgrade our blobs to be aware of their surroundings, and make a choice based on what they find.
+
+Challenge:
+- Write a script inspired by last week's TargetList script which will use a trigger to manage a list of BlobSize components
+- It also needs to get the trigger component and make it bigger when the BlobSize component changes size
+
+Create a new variant of the original Blob prefab, call this one 'SmartBlob'. Add a child object to the dynamic sprite, with a CircleCollider2D as a trigger, and attach the BlobAwareness script.
+
+Write the new 'SmartBlobAI' script together. Emphasise we're still using the state machine, just changing how we're choosing which state to use.
+
+Add a bunch of SmartBlobs to the scene, randomise their size, and hit play. Demonstrate how they choose different actions depending on their current situation.

@@ -8,7 +8,7 @@ Today we're going to look more closely at NavMesh components and ways we can con
 
 Make 4 simple materials - the floor, a door/gate, and two agents. Solid colours are fine.
 
-Create a Plane, scale it to 10x. 15 mins to use ProBuilder to make a SIMPLE "maze", with at least one ramp/staircase up to a higher level (feel free to show them the maze in this project)
+Create a Plane, scale it to 10x. 15 mins to use ProBuilder to make a SIMPLE maze-like environment, with at least one ramp/staircase up to a higher level (feel free to show them the example in this project)
 
 Add a NavMesh Surface to the scene, set it up and bake it. Add a Capsule, add a Nav Agent component. Probably increase the speed to around 10.
 
@@ -35,8 +35,8 @@ Activate 'Carve' and demonstrate that when you move the door, the NavMesh recogn
 
 Put the door inside an empty parent object, then add two waypoints for the door (one closed, one "open" sunk into the floor).
 
-Challenge: write a script which will move the door object between closed and open when a bool is turned true or false.
-- Suggest they take inspiration from our simple waypoints script from week 3
+Challenge: write a script which will move the door object between closed and open when a bool is turned true or false. (10-15 mins)
+- Suggest they take inspiration from the 'move object towards' script from week 3
 
 Write the 'Door' script together - emphasise there are different solutions, if yours works, you did it, even if your answer looks different to this.
 
