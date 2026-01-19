@@ -2,18 +2,19 @@ Start of lesson:
 - Have learners create a new 3D project called "Navigation Maze"
 - Install the ProBuilder package
 - Go to Project Settings > Player > Active Input Handling and set it to 'Both' 
+- Open the Navigation window (Windows > AI > Navigation) and dock it somewhere
 
 Today we're going to look more closely at NavMesh components and ways we can configure our pathfinding.
 
-Open the Navigation window (Windows > AI > Navigation) and dock it somewhere
-
-Make 4 simple materials - the floor, a door/gate, and two agents.
+Make 4 simple materials - the floor, a door/gate, and two agents. Solid colours are fine.
 
 Create a Plane, scale it to 10x. 15 mins to use ProBuilder to make a SIMPLE "maze", with at least one ramp/staircase up to a higher level (feel free to show them the maze in this project)
 
 Add a NavMesh Surface to the scene, set it up and bake it. Add a Capsule, add a Nav Agent component. Probably increase the speed to around 10.
 
 Write the 'NavigateToMouse' script. Attatch it to the capsule. Demonstrate clicking in the scene and the agent will navigate there.
+
+With each of these categories, bounce back to the powerpoint after you add the component in the scene, to review each of the component's properties. Then continue in the scene.
 
 AGENT TYPES:
 Open the Navigation window. Add a new Agent type (Giant). Set the Name, Radius, Height, and Step Height. Add a second NavMesh Surface to the scene, set it to the Giant type, and bake it.
@@ -25,10 +26,19 @@ Create a Giant by scaling a duplicate of the human agent. In the Agent component
 Click in the scene to demonstrate the two agents taking different routes to get to the same destination.
 
 NAV LINKS:
-
+Add a NavMesh Link object to the scene, position it so it connects the higher level to the lower level in one direction (down). BAKE the mesh. Demonstrate the link working.
 
 NAV OBSTACLES:
+Add a new ProBuilder shape to the scene representing a door closing off a pathway. Add a NavMesh Obstacle component to it - note the size auto-matches the collider when you add it.
 
+Activate 'Carve' and demonstrate that when you move the door, the NavMesh recognises it as a blocked area.
+
+Put the door inside an empty parent object, then add two waypoints for the door (one closed, one "open" sunk into the floor).
+
+Challenge: write a script which will move the door object between closed and open when a bool is turned true or false.
+- Suggest they take inspiration from our simple waypoints script from week 3
+
+Write the 'Door' script together - emphasise there are different solutions, if yours works, you did it, even if your answer looks different to this.
 
 NAV MODIFIER VOLUMES:
 

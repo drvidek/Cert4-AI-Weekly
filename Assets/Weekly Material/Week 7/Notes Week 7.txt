@@ -1,0 +1,13 @@
+
+Start of lesson:
+- Have learners create a new 2D project called 'A Game About Blobs'
+
+Create a prefab, 'Blob'. Add a dynamic sprite child object. Set the Sprite Renderer to 'Draw Mode' - Sliced. Add a 'Blob' tag and apply it on both objects.
+
+Write the 'BlobSize' script. Demonstrate it working. Add the 'OnValidate' and show it working in editor.
+
+Write the BlobCollision script. Add it to the dynamic sprite.
+
+Add two Blob prefabs to the scene, and make one larger than the other through the BlobSize component. 
+
+Demostrate the BlobCollision script working by manually moving the blobs into each other. (Colour will make it easier to see which Blob is "eaten")
