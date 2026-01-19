@@ -14,9 +14,10 @@ Add a NavMesh Surface to the scene, set it up and bake it. Add a Capsule, add a 
 
 Write the 'NavigateToMouse' script. Attatch it to the capsule. Demonstrate clicking in the scene and the agent will navigate there.
 
-With each of these categories, bounce back to the powerpoint after you add the component in the scene, to review each of the component's properties. Then continue in the scene.
 
-AGENT TYPES:
+// For each of the following categories, add the component/object in the scene, then boucn back to PPT to review the component's properties. Then continue in the scene. //
+
+NAV AGENT TYPES:
 Open the Navigation window. Add a new Agent type (Giant). Set the Name, Radius, Height, and Step Height. Add a second NavMesh Surface to the scene, set it to the Giant type, and bake it.
 
 Note how the mesh is different - maybe a giant can't go down some narrow corridors, or they can step up over a wall.
@@ -40,9 +41,9 @@ Challenge: write a script which will move the door object between closed and ope
 
 Write the 'Door' script together - emphasise there are different solutions, if yours works, you did it, even if your answer looks different to this.
 
-NAV MODIFIER VOLUMES:
+NAV AREAS AND MODIFIER VOLUMES:
+Add a NavMesh Modifier Volume to the scene. Position and size it to cover a large chunk of the navmesh. Open the Navigation window and choose the 'Areas' tab.
 
+Add a new area, e.g. 'Gravel' or 'Snow' or 'Swamp', with a cost of 2 or more. Go back to the volume we just made, and set it to the Area type we just created.
 
-
-End of lesson:
-- Combine the simple waypoints with the 
+Bake all navmeshes. Demonstrate the agents avoid walking over that area unless necessary.
