@@ -1,9 +1,11 @@
 
 Start of lesson:
-- Have learners create a new 3D project called 'Mostly Friendly NPCs'
+- Have learners create a new 3D project called 'Object Oriented AI'
 - Go to Project Settings > Player > Active Input Handling and set it to 'Both' 
 
-Challenge:
-- Write a simple script to control a 3D player character
-- Give them 15 minutes - suggest they lean on other class' content if they need to
+CHALLENGE: Create a DEAD SIMPLE player controller script
+- Flat movement in world space
+- No jumping, no gravity
+- No camera stuff
+- 5 minutes
 

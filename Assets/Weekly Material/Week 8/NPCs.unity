@@ -119,6 +119,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &192838519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3674489285931144282, guid: 4e7e0067a8ceb4781b0aa66958014e3b, type: 3}
+  m_PrefabInstance: {fileID: 1052896995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &192838521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192838519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 362b0737588a7482290314806dcaa76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PivotTowardTarget
+  target: {fileID: 1612531244}
+  axis: {x: 0, y: 1, z: 0}
 --- !u!1 &720454333
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +749,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3674489285931144282, guid: 4e7e0067a8ceb4781b0aa66958014e3b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 192838521}
   m_SourcePrefab: {fileID: 100100000, guid: 4e7e0067a8ceb4781b0aa66958014e3b, type: 3}
 --- !u!1 &1236314678
 GameObject:
@@ -871,7 +893,7 @@ GameObject:
   - component: {fileID: 1612531239}
   - component: {fileID: 1612531245}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
