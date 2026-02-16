@@ -19,6 +19,7 @@ Create the NavMesh surface object in scene, set 'Use Geometry' to 'Physics Colli
 - Point out how the capsule and the wall leave holes in the mesh (we will fix the capsule later)
 
 Create the NPCNavMeshDirect object and add the Agent component
+- We'll go into depth about this Agent component next week - for now, it allows an object to use a NavMesh
 
 Write the 'NavigateToObject' script
 - Point out how little code is required - the agent handles all movement, speed, distance, etc
@@ -33,6 +34,7 @@ Now make the 'NavigateBetweenWaypoints' script by combining our two approaches
 - Remember to re-bake the mesh
 - Now we have an agent who moves on a set path and avoids obstacles
 - point out how the waypoints don't need perfect placement, they just need to be close to the NavMesh surface
+- for smooth movement, turn off "Auto Braking" in the NavMesh Agent component
 
 Some limitations with both approaches:
 - Does not account for a moving target (e.g. following the player)
@@ -41,4 +43,5 @@ Some limitations with both approaches:
 Create a new scene, add Terrain (3D Object > Terrain)
 - In the terrain settings, reduce the width & depth to 20 or so
 - Make some gentle hills and slopes on the terrain with the brush mode, using 'Raise or Lower Terrain'
-- Add a NavMesh surface object and set up as before, add a new Agent object, and use the 'NavigateBetweenWaypoints' script to demonstrate the agent moving smoothly over the complex terrain
+- Add a NavMesh surface object and set up as before
+- add a new Agent object, and use the 'NavigateBetweenWaypoints' script to demonstrate the agent moving smoothly over the complex terrain

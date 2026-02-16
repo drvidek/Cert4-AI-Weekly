@@ -2,7 +2,6 @@ Start of lesson:
 - Have learners create a new 3D project called "Navigation Maze"
 - Install the ProBuilder package
 - Go to Project Settings > Player > Active Input Handling and set it to 'Both' 
-- Open the Navigation window (Windows > AI > Navigation) and dock it somewhere
 
 Today we're going to look more closely at NavMesh components and ways we can configure our pathfinding.
 
@@ -15,10 +14,13 @@ Add a NavMesh Surface to the scene, set it up and bake it. Add a Capsule, add a 
 Write the 'NavigateToMouse' script. Attatch it to the capsule. Demonstrate clicking in the scene and the agent will navigate there.
 
 
-// For each of the following categories, add the component/object in the scene, then boucn back to PPT to review the component's properties. Then continue in the scene. //
+// For each of the following categories, add the component/object in the scene,
+then bounce back to PPT to review the component's properties. Then continue in the scene. //
 
-NAV AGENT TYPES:
-Open the Navigation window. Add a new Agent type (Giant). Set the Name, Radius, Height, and Step Height. Add a second NavMesh Surface to the scene, set it to the Giant type, and bake it.
+NAV AGENT:
+Open the Navigation window (Windows > AI > Navigation). Do 3 slides (opening Nav window, Nav agent settings, Nav agent component).
+
+Add a new Agent type (Giant). Set the Name, Radius, Height, and Step Height. Add a second NavMesh Surface to the scene, set it to the Giant type, and bake it.
 
 Note how the mesh is different - maybe a giant can't go down some narrow corridors, or they can step up over a wall.
 
@@ -26,24 +28,50 @@ Create a Giant by scaling a duplicate of the human agent. In the Agent component
 
 Click in the scene to demonstrate the two agents taking different routes to get to the same destination.
 
-NAV LINKS:
-Add a NavMesh Link object to the scene, position it so it connects the higher level to the lower level in one direction (down). BAKE the mesh. Demonstrate the link working.
 
 NAV OBSTACLES:
-Add a new ProBuilder shape to the scene representing a door closing off a pathway. Add a NavMesh Obstacle component to it - note the size auto-matches the collider when you add it.
+Add a new ProBuilder shape to the scene representing a door or gate closing off a pathway.
+
+Add a NavMesh Obstacle component to it. Do 1 slide.
+
+Come back and note the size auto-matches the collider when you add it.
 
 Activate 'Carve' and demonstrate that when you move the door, the NavMesh recognises it as a blocked area.
 
-Put the door inside an empty parent object, then add two waypoints for the door (one closed, one "open" sunk into the floor).
+Put the door inside an empty parent object, then add two waypoints for the door (one closed, one "open" sunk below the floor).
 
 Challenge: write a script which will move the door object between closed and open when a bool is turned true or false. (10-15 mins)
 - Suggest they take inspiration from the 'move object towards' script from week 3
 
-Write the 'Door' script together - emphasise there are different solutions, if yours works, you did it, even if your answer looks different to this.
+Write the 'Door' script together
+- emphasise there are different solutions, if yours works, you did it, even if your answer looks different to this.
+- Show the door carving the 
+
 
 NAV AREAS AND MODIFIER VOLUMES:
-Add a NavMesh Modifier Volume to the scene. Position and size it to cover a large chunk of the navmesh. Open the Navigation window and choose the 'Areas' tab.
+Add a NavMesh Modifier Volume to the scene. Do 2 slides.
 
-Add a new area, e.g. 'Gravel' or 'Snow' or 'Swamp', with a cost of 2 or more. Go back to the volume we just made, and set it to the Area type we just created.
+Position and size the volume to cover a large chunk of the navmesh.
+
+Open the Navigation window and choose the 'Areas' tab.
+
+Add a new area, e.g. 'Gravel' or 'Snow' or 'Swamp', with a cost of 2 or more.
+
+Go back to the volume we just made, and set it to the Area type we just created.
 
 Bake all navmeshes. Demonstrate the agents avoid walking over that area unless necessary.
+
+
+NAV LINKS:
+Add a NavMesh Link object to the scene. Do 1 slide.
+
+Move and position it and its ends so it connects the higher level to the lower level in one direction (down).
+
+BAKE the mesh. Demonstrate the link working.
+
+
+To finish the lesson:
+- Now you know about all these different options, make a better maze!
+- Add lots of verticality, slopes, jumps down or up or over gaps
+- Add lots of doors and modified areas
+- Extra challenge - have the doors open and close on a timer
