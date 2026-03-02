@@ -42,7 +42,7 @@ public class TargetList : MonoBehaviour
 
             // If that distance is shorter than the current shortest distance...
             if (currentTargetDistance < minDistance)
-            // && IsTargetVisible(target))          /// Uncomment and fix the () pair to implement the sight-checking challenge
+                // && IsTargetVisible(target))      //// Uncomment and fix the () pair to implement the sight-checking challenge
             {
                 // We've found a new target
                 currentTarget = target;
@@ -54,9 +54,25 @@ public class TargetList : MonoBehaviour
         // When done, we'll have figured out which target is the nearest
         return currentTarget;
     }
+
     void OnTriggerExit2D(Collider2D collision)
     {
         // We can safely remove from a list even if the item isn't actually on it
         currentTargets.Remove(collision.transform);
+    }
+
+    // This is an optional solution to sight-checking.
+    // This won't work without turning off "Queries Hit Triggers" in Project Settings > Physics2D
+    // (or some LayerMask business)
+    private bool IsTargetVisible(Transform target)
+    {
+        Vector2 direction = target.position - transform.position;
+        direction.Normalize();
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction);
+        if (hit.collider)
+        {
+            return hit.collider.CompareTag("Target");
+        }
+        return false;
     }
 }

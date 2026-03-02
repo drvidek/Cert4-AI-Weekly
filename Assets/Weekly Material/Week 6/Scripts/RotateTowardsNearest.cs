@@ -58,19 +58,4 @@ public class RotateTowardsNearest : MonoBehaviour
             transform.Rotate(Vector3.forward, angleDirection * turnSpeed * Time.deltaTime);
         }
     }
-
-    // This is the optional solution to sight-checking.
-    // This won't work without turning off "Queries Hit Triggers" in Project Settings > Physics2D
-    // (or some LayerMask business which is out of scope for this lesson)
-    private bool IsTargetVisible(Transform target)
-    {
-        Vector2 direction = target.position - transform.position;
-        direction.Normalize();
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction);
-        if (hit.collider)
-        {
-            return hit.collider.CompareTag("Target");
-        }
-        return false;
-    }
 }
