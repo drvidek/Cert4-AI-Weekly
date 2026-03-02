@@ -1,44 +1,23 @@
 
 Start of lesson:
-- Have learners create a new 2D project called 'A Game About Blobs'
+- Have learners create a new 3D project called 'Object Oriented AI'
 - Go to Project Settings > Player > Active Input Handling and set it to 'Both' 
 
-"Last week we made an AI turret which had just one behaviour - choose a target to aim at. Today we're going to make a game with AI that chooses different behaviour depending on what's happening in game."
+Add a plane to the scene, scale it up 5x, attach a NavMesh Surface, set object collection to "Current Object Hierarchy" and bake.
 
-Create a prefab, 'Blob'. Add a dynamic sprite child object. Set the Sprite Renderer to 'Draw Mode' - Sliced. Add a 'Blob' tag and apply it on both objects.
+Add a capsule to the scene which will be our player.
 
-Write the 'BlobSize' script. Demonstrate it working. Add the 'OnValidate' and show it working in editor.
+CHALLENGE: Create a DEAD SIMPLE player controller script
+- Flat, transform-based movement in world space
+- No jumping, no gravity
+- No camera stuff
+- 5 minutes
 
-Write the BlobCollision script. Add it to the dynamic sprite.
+Show the PlayerMove script. It can be that simple when we're just testing stuff.
 
-Add two Blob prefabs to the scene, and make one larger than the other through the BlobSize component (or use the randomise toggle)
+Create a Prefab and build the template NPC. We're adding a little "face" to help us see where it's looking.
 
-Demostrate the BlobCollision script working by manually moving the blobs into each other. (Colour will make it easier to see which Blob is "eaten")
+Discuss how last week we made a variety of strategies, but we found ourselves having to rewrite a lot of similar code between them
+- We can use OOP principles to make more reusable code
+- Today we will be using Inheritance and Encapsulation
 
-Challenge:
-- Write a simple script to control a blob with player inputs
-- Give them 5 minutes - remind them we have no walls so no need for physics
-
-Attach the player script to one of the blobs and demonstrate it working.
-
-Go back to the slides to talk about state machines. Design our state machine in Draw.IO, as a flowchart.
-
-Make a prefab variant of the Blob, called 'BlobAI'. Write the 'BlobAI' script. Attach it to the dynamic sprite in the variant.
-
-Demonstrate the script working, manually change the size of the player blob and show the AI blob reacting differently to being bigger or smaller.
-
-
-// This might be way too much content, see how you go for time, can finish next week //
-
-At the moment, we just have the AI blobs responding to one thing - the player. But what if we want them to all respond to each other?
-We're going to upgrade our blobs to be aware of their surroundings, and make a choice based on what they find.
-
-Challenge:
-- Write a script inspired by last week's TargetList script which will use a trigger to manage a list of BlobSize components
-- It also needs to get the trigger component and make it bigger when the BlobSize component changes size
-
-Create a new variant of the original Blob prefab, call this one 'SmartBlob'. Add a child object to the dynamic sprite, with a CircleCollider2D as a trigger, and attach the BlobAwareness script.
-
-Write the new 'SmartBlobAI' script together. Emphasise we're still using the state machine, just changing how we're choosing which state to use.
-
-Add a bunch of SmartBlobs to the scene, randomise their size, and hit play. Demonstrate how they choose different actions depending on their current situation.

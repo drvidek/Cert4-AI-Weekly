@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3195799703891891834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6851719474617330535, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_Name
+      value: BlobStateAI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8767436262897713843, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2651803337889820310, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7288536742094294369}
+    - targetCorrespondingSourceObject: {fileID: 2651803337889820310, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6489016573455896926}
+    - targetCorrespondingSourceObject: {fileID: 2651803337889820310, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5108963341458752939}
+    - targetCorrespondingSourceObject: {fileID: 2651803337889820310, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3806758734822125517}
+    - targetCorrespondingSourceObject: {fileID: 2651803337889820310, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4510997923321553201}
+  m_SourcePrefab: {fileID: 100100000, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+--- !u!1 &618360872877193452 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2651803337889820310, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+  m_PrefabInstance: {fileID: 3195799703891891834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7288536742094294369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618360872877193452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c286d02f07df642c38c15c68c37042d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StateMachine
+  states: []
+  awarenessRange: 5
+  playerBlob: {fileID: 0}
+  focusedTransform: {fileID: 0}
+--- !u!114 &6489016573455896926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618360872877193452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bdfc52e28e64bf69ca6432b56c3e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IdleState
+  stateMachine: {fileID: 0}
+  blobState: 0
+  durationIdleMin: 0.5
+  durationIdleMax: 1.5
+--- !u!114 &5108963341458752939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618360872877193452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0168c4651c48046ff97703c953af97be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WalkState
+  stateMachine: {fileID: 0}
+  blobState: 1
+  speed: 1.5
+  wanderRadius: 10
+--- !u!114 &3806758734822125517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618360872877193452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fed8a1b5d34dd4e6ca54cd5b39297ef3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FleeState
+  stateMachine: {fileID: 0}
+  blobState: 3
+  speed: 2
+  safeDistance: 5
+--- !u!114 &4510997923321553201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618360872877193452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad2fe037fba44ed5925e56ce6927725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HuntState
+  stateMachine: {fileID: 0}
+  blobState: 2
+  speed: 2
+  disengageDistance: 7

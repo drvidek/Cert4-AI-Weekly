@@ -20,7 +20,7 @@ public class RotateTowardsNearest : MonoBehaviour
         if (targetList && targetList.currentTargets.Count > 0)
         {
             // Set the current target based on which is nearest
-            targetCurrent = FindNearestTarget();
+            targetCurrent = targetList.FindNearestTarget();
             
             // If we somehow fail to find anything...
             if (!targetCurrent)
@@ -57,46 +57,6 @@ public class RotateTowardsNearest : MonoBehaviour
             // Rotate around our Z axis, in the direction we determined, using the desired speed
             transform.Rotate(Vector3.forward, angleDirection * turnSpeed * Time.deltaTime);
         }
-    }
-    
-    /// <summary>
-    /// Checks the target list and returns the target which is nearest to the turret
-    /// </summary>
-    /// <returns></returns>
-    private Transform FindNearestTarget()
-    {
-        // This will hold the distance between any given point and the turret
-        float currentDistance;
-
-        // This will track the shortest current distance between a target and the turret
-        float minDistance = float.PositiveInfinity;
-
-        // When we're done iterating, this will have a reference to the closest target.
-        Transform currentTarget = null;
-
-        // We will iterate through all the possible targets, and check how close each one is.
-        // If we find that the current distance is shorter than our minimum distance,
-        // we know that the target we're currently checking is a better choice.
-
-        // For each target (which is the Transform type) in my list of possible targets...
-        foreach (Transform target in targetList.currentTargets)
-        {
-            // Get the distance between the current target and the turret
-            currentDistance = Vector3.Distance(target.position, transform.position);
-
-            // If that distance is shorter than the current shortest distance...
-            if (currentDistance < minDistance)
-                // && IsTargetVisible(target))          /// Uncomment and fix the () pair to implement the sight-checking challenge
-            {
-                // We've found a new target
-                currentTarget = target;
-                // Update our minimum distance for future checks
-                minDistance = currentDistance;
-            }
-        }
-
-        // When done, we'll have figured out which target is the nearest
-        return currentTarget;
     }
 
     // This is the optional solution to sight-checking.
