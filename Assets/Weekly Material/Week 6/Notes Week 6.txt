@@ -1,12 +1,12 @@
 Start of lesson:
 - Have learners create a new 2D project called "AI Turrent"
+- Go into the Project Settings > Physics2D and turn off "Queries Hit Triggers"
+    - this will stop 2D raycasts from hitting triggers, they will only hit colliders.
 
-What are some senses and information we use in real life to determine
+Go through the slides, at the end sort the class into groups of 3-4 and have them discuss the turret scenario, what strategies it should have.
+(These groups will be used for the two project assessments, where learners must discuss their ideas and reflect together.)
 
-We're going to make a turrent which (in theory) has to shoot targets before they get too close to it.
 For our purposes we're just going to make the turret work, and manually move targets around in the scene view to test.
-
-First go into the Project Settings > Physics2D and turn off "Queries Hit Triggers" - this will stop 2D raycasts from hitting triggers, they will only hit colliders.
 
 Create the turret:
 -Turret (empty parent)
@@ -35,7 +35,7 @@ Write the 'TargetList' script. Attach it to the object we just made. Add another
 
 Write the 'LookAtFirstTarget' script. You can copy/paste the LookAt method if you want to.
 
-On the Pivot, emove or disable the 'LookAtTarget' component, add the new script, and assign the TargetList object in the slot.
+On the Pivot, remove or disable the 'LookAtTarget' component, add the new script, and assign the TargetList object in the slot.
 
 Demonstrate the turret now looks at whatever the first target on the list is.
 

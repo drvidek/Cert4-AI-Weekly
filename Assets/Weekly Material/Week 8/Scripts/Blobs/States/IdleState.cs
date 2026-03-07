@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IdleState : State
+public class IdleState : StateBehaviour
 {
     public float durationIdleMin = .5f;
     // The longest the blob can wait during Idle state
@@ -14,7 +14,7 @@ public class IdleState : State
         durationIdleCurrent = Random.Range(durationIdleMin, durationIdleMax);
     }
 
-    public override void UpdateState()
+    public override void StateUpdate()
     {
         // Count down our idle time towards 0
         durationIdleCurrent -= Time.deltaTime;

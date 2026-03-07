@@ -7,7 +7,7 @@ public class BlobSize : MonoBehaviour
     public float radius = .5f;
 
     // Whether or not to start with a randomised radius
-    public bool randomRadius;
+    public bool useRandomRadius;
 
     public UnityEvent onChangeSize;
 
@@ -21,7 +21,7 @@ public class BlobSize : MonoBehaviour
     void Start()
     {
         // Randomise the radius if the box has been ticked
-        if (randomRadius)
+        if (useRandomRadius)
         {
             // Use a number between 0.2 and 1.2 as the new radius
             radius = Random.Range(0.2f, 1.2f);
@@ -63,5 +63,25 @@ public class BlobSize : MonoBehaviour
         sprite.size = radius * 2f * Vector2.one;
 
         onChangeSize.Invoke();
+    }
+
+    /// <summary>
+    /// Check if the radius of another blob is smaller than this blob.
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns>True if the other blob is smaller. False if the other blob is the same or larger.</returns>
+    public bool IsBiggerThan(BlobSize other)
+    {
+        return other.radius < radius;
+    }
+
+    /// <summary>
+    /// Check if the radius of another blob is bigger than this blob.
+    /// </summary>
+    /// <param name="other"></param>
+    /// <returns>True if the other blob is bigger. False if the other blob is the same or smaller.</returns>
+    public bool IsSmallerThan(BlobSize other)
+    {
+        return other.radius > radius;
     }
 }

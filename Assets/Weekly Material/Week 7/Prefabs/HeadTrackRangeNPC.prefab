@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8688679712324207758
+--- !u!1001 &4432542646203916901
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5622686393456240030, guid: c0a5f2f1c4bc54757961e75757673440, type: 3}
       propertyPath: m_Name
-      value: HeadTrackingNPC
+      value: HeadTrackRangeNPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58,25 +58,26 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 282964549440836444, guid: c0a5f2f1c4bc54757961e75757673440, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7196453842816760526}
+      addedObject: {fileID: 8041704382654647721}
   m_SourcePrefab: {fileID: 100100000, guid: c0a5f2f1c4bc54757961e75757673440, type: 3}
---- !u!1 &8897194128942127058 stripped
+--- !u!1 &4498749473202254137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 282964549440836444, guid: c0a5f2f1c4bc54757961e75757673440, type: 3}
-  m_PrefabInstance: {fileID: 8688679712324207758}
+  m_PrefabInstance: {fileID: 4432542646203916901}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7196453842816760526
+--- !u!114 &8041704382654647721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8897194128942127058}
+  m_GameObject: {fileID: 4498749473202254137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 926c7734f8d8c4c1c916411705abd069, type: 3}
+  m_Script: {fileID: 11500000, guid: a19f0ded8872344c1ab6c82b08d256b7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LookTowardsTargetConstrained
+  m_EditorClassIdentifier: Assembly-CSharp::LookTowardsTargetInRangeConstrained
   target: {fileID: 0}
   lookSpeed: 180
   angleConstraint: 45
+  range: 5

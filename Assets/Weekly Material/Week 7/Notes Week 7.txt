@@ -13,11 +13,33 @@ CHALLENGE: Create a DEAD SIMPLE player controller script
 - No camera stuff
 - 5 minutes
 
-Show the PlayerMove script. It can be that simple when we're just testing stuff.
+Show the PlayerMove script. "It can be that simple when we're just testing stuff."
 
 Create a Prefab and build the template NPC. We're adding a little "face" to help us see where it's looking.
 
 Discuss how last week we made a variety of strategies, but we found ourselves having to rewrite a lot of similar code between them
 - We can use OOP principles to make more reusable code
-- Today we will be using Inheritance and Encapsulation
+- Today we will be focusing on Inheritance and Abstraction
 
+Write and demonstrate the scripts, using the player as the target and creating a prefab variant for each:
+- HasTarget (demonstrate that this script by itself doesn't do anything, it's just a basis)
+- FollowTarget
+- FollowTargetInRange
+- LookAtTarget
+- LookAtTargetFlat
+
+Divert here to make the NPC template with separate head.
+
+Continue with the scripts:
+- LookTowardsTarget
+- LookTowardsTargetConstrained
+
+CHALLENGE: Inherit from 'LookTowardsTargetConstrained' and make a new script (10 mins)
+- Give the looking behaviour a maximum range
+- If not in range, use the initial direction instead
+- Leverage our existing IsTargetInRage function, and look at FollowTargetInRange for help
+- Don't overcomplicate!
+
+Then write the solution together.
+
+If there's time left at the end of class, have the learners download and start Assessment 1, part 1 (research document).

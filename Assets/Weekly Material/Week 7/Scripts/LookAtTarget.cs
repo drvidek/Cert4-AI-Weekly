@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// Namespace only needed to distinguish in this master project
+//////// TEACHER! Namespace only needed to distinguish in this master project
 namespace Week7
 {
     public class LookAtTarget : HasTarget
@@ -10,14 +10,12 @@ namespace Week7
             LookAt();
         }
 
-        public void LookAt()
+        /// <summary>
+        /// Look directly at the target immediately.
+        /// </summary>
+        public virtual void LookAt()
         {
             transform.LookAt(target);
-        }
-
-        public void SetAngles(Vector3 newEulerAngles)
-        {
-            transform.localEulerAngles = newEulerAngles;
         }
     }
 }

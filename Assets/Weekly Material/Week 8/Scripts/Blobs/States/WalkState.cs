@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WalkState : State
+public class WalkState : StateBehaviour
 {
     public float speed = 1.5f;
     // The maximum distance to wander from your current location
@@ -19,7 +19,7 @@ public class WalkState : State
         currentTarget = stateMachine.transform.position + (wanderRadius * randomPoint);
     }
 
-    public override void UpdateState()
+    public override void StateUpdate()
     {
         // Calculate and normalise the direction
         Vector3 direction = currentTarget - transform.position;

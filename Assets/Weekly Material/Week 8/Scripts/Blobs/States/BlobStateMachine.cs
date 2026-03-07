@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BlobStateMachine : MonoBehaviour
 {
-    [SerializeField] private State[] states;
+    [SerializeField] private StateBehaviour[] states;
     [Tooltip("The closest another blob can get before they are noticed by this blob")]
     public float awarenessRange = 5f;
 
@@ -15,33 +15,54 @@ public class BlobStateMachine : MonoBehaviour
     /// </summary>
     public Transform focusedTransform;
 
-    protected State stateCurrent;
+    protected StateBehaviour stateCurrent;
     protected BlobSize mySize;
 
     public virtual void Start()
     {
-        states = GetComponents<State>();
+        // GetComponents will get all the components of one type as an array
+        // This will capture all the states attached to the same gameobject as this state machine
+        states = GetComponents<StateBehaviour>();
+
+        // Get a reference to the blob size
         mySize = GetComponent<BlobSize>();
+
+        // Set the machine with the first state found
         ChangeState(states[0].blobState);
     }
 
     public void Update()
     {
+        // Check if we should flee/hunt
         CheckAwareness();
-        stateCurrent.UpdateState();
+
+        // Run the current state's Update behaviour
+        stateCurrent.StateUpdate();
     }
 
+    /// <summary>
+    /// Change the current state to a new state, doing nothing if the state is already active.
+    /// </summary>
+    /// <param name="newState"></param>
     public void ChangeState(BlobState newState)
     {
-        if (stateCurrent.blobState == newState)
+        // If the new state matches the current state, do nothing
+        if (stateCurrent && stateCurrent.blobState == newState)
             return;
-            
-        foreach (State state in states)
+        
+        // Loop through our states
+        foreach (StateBehaviour state in states)
         {
+            // When we find the state which matches the requested state...
             if (state.blobState == newState)
             {
+                // Update the current state
                 stateCurrent = state;
+
+                // Run the state's Enter behaviour
                 state.Enter();
+
+                // Stop looping because we found the state we want
                 break;
             }
         }
@@ -56,7 +77,7 @@ public class BlobStateMachine : MonoBehaviour
         if (IsInRange(playerBlob.transform, awarenessRange))
         {
             // If the player is a bigger blob...
-            if (playerBlob.radius > mySize.radius)
+            if (playerBlob.IsBiggerThan(mySize))
             {
                 // Run away
                 ChangeState(BlobState.Flee);
@@ -68,6 +89,26 @@ public class BlobStateMachine : MonoBehaviour
 
             focusedTransform = playerBlob.transform;
         }
+    }
+
+    /// <summary>
+    /// Determine whether or not the blob is currently in danger of being eaten.
+    /// </summary>
+    /// <returns></returns>
+    public virtual bool IsInDanger()
+    {
+        // Check if the focused transform is in range of the blob
+        return IsInRange(focusedTransform, awarenessRange + 2f);
+    }
+
+    /// <summary>
+    /// Calculate the direction away from danger.
+    /// </summary>
+    /// <returns></returns>
+    public virtual Vector3 DirectionAwayFromDanger()
+    {
+        Vector3 direction = transform.position - focusedTransform.position;
+        return direction.normalized;
     }
 
     /// <summary>

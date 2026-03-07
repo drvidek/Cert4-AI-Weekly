@@ -2,7 +2,8 @@ using UnityEngine.AI;
 
 public class FollowTarget : HasTarget
 {
-    public NavMeshAgent agent;
+    // protected is like private, but inheriting scripts can see it
+    protected NavMeshAgent agent;
 
     public void Start()
     {
@@ -11,10 +12,14 @@ public class FollowTarget : HasTarget
 
     void Update()
     {
+        // Update our target destination every step.
         SetDestination();
     }
 
-    public void SetDestination()
+    /// <summary>
+    /// If there is a target, set the destination to that target.
+    /// </summary>
+    public virtual void SetDestination()        // 'virtual' allows us to override this function with new behaviour 
     {
         if (target)
         {
