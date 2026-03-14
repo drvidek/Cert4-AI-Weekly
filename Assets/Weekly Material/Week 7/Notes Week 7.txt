@@ -42,4 +42,4 @@ CHALLENGE: Inherit from 'LookTowardsTargetConstrained' and make a new script (10
 
 Then write the solution together.
 
-If there's time left at the end of class, have the learners download and start Assessment 1, part 1 (research document).
+If there's time left at the end of class, have the learners download and start Assessment 1, part 1 task 1 (the research document only).
