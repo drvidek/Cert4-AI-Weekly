@@ -3,9 +3,11 @@ Start of lesson:
 - Have learners create a new 2D project called 'A Game About Blobs'
 - Go to Project Settings > Player > Active Input Handling and set it to 'Both' 
 
-"Last week we made an AI turret which had just one behaviour - choose a target to aim at. Today we're going to make a game with AI that chooses different behaviour depending on what's happening in game."
+"Last week we made an AI turret which had just one behaviour - choose a target to aim at.
+Today we're going to make a game with AI that chooses different behaviour depending on what's happening in game."
 
-Create a prefab, 'Blob'. Add a dynamic sprite child object. Set the Sprite Renderer to 'Draw Mode' - Sliced. Add a 'Blob' tag and apply it on both objects.
+Create a prefab, 'Blob'. Add a dynamic sprite child object.
+Set the Sprite Renderer to 'Draw Mode' - Sliced. Add a 'Blob' tag and apply it on both objects.
 
 Write the 'BlobSize' script. Demonstrate it working. Add the 'OnValidate' and show it working in editor.
 
@@ -13,7 +15,8 @@ Write the BlobCollision script. Add it to the dynamic sprite.
 
 Add two Blob prefabs to the scene, and make one larger than the other through the BlobSize component (or use the randomise toggle)
 
-Demostrate the BlobCollision script working by manually moving the blobs into each other. (Colour will make it easier to see which Blob is "eaten")
+Demostrate the BlobCollision script working by manually moving the blobs into each other.
+(Colour will make it easier to see which Blob is "eaten")
 
 Challenge:
 - Write a simple script to control a blob with player inputs
@@ -41,10 +44,11 @@ Then, make the Hunt and Flee states, and show it interacting with the player.
 ///// Part 2
 // This might be way too much content, see how you go for time, can finish next week //
 
-At the moment, we just have the AI blobs responding to one thing - the player. But what if we want them to all respond to each other?
+At the moment, we just have the AI blobs responding to one thing - the player.
+But what if we want them to all respond to each other?
 We're going to upgrade our blobs to be aware of their surroundings, and make a choice based on what they find.
 
-We'll make a similar script to the 
+Write the BlobAwareness script together - point out it is similar to the TargetList script from the auto-turret.
 
 Create a new variant of the original Blob prefab, call this one 'SmartBlob'.
 Add a child object to the dynamic sprite, with a CircleCollider2D as a trigger, and attach the BlobAwareness script.
