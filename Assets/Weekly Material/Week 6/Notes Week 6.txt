@@ -25,13 +25,17 @@ Make 2 prefabs:
 
 Create the Gun script, attach it to the Gun object. Give it the Bullet prefab.
 
-Create LookAtTarget script, apply to the Pivot. Add a Target prefab to the scene and assign it as the target. Demonstrate how you can move the target at the turret follows it.
+Create LookAtTarget script, apply to the Pivot. Add a Target prefab to the scene and assign it as the target.
+
+Demonstrate how you can move the target at the turret follows it.
 
 "What happens if we need more than one target?"
 
 Create a new object, name it 'TargetList', nest in the Turrent parent, give it a CircleCollider2D and make it a trigger. Give a large radius.
 
-Write the 'TargetList' script. Attach it to the object we just made. Add another Target prefab to the scene, and demonstrate the list changing as they move in and out of the trigger.
+Write the 'TargetList' script, only doing the OnTrigger functions. Attach it to the object we just made.
+
+Add another Target prefab to the scene, and demonstrate the list changing as they move in and out of the trigger.
 
 Write the 'LookAtFirstTarget' script. You can copy/paste the LookAt method if you want to.
 
@@ -39,15 +43,17 @@ On the Pivot, remove or disable the 'LookAtTarget' component, add the new script
 
 Demonstrate the turret now looks at whatever the first target on the list is.
 
-"What might be smarter than this?" - attacking the nearest target
+"What might be smarter than this?" - attacking the nearest target.
 
 We're going to have to *iterate* through the whole list and determine which target is closest - this is an example of an Algorithm!
+
+Add the "FindNearestTarget" method to the TargetList script.
 
 Write the 'LookAtNearest' script. Attach to the Pivot, disable the other components, connect the TargetList object again.
 
 Demonstrate the turret now shoots at the closest target.
 
-"What feels unfair or even janky?" - immediate targeting
+"What feels unfair or even janky?" - immediate targeting.
 
 Write the "RotateTowardsTarget" script. Attach to the Pivot, disable the other components, connect the TargetList object again.
 

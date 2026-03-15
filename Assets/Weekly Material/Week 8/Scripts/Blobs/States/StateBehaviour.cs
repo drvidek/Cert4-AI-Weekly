@@ -21,6 +21,7 @@ public abstract class StateBehaviour : MonoBehaviour
     void Awake()
     {
         stateMachine = GetComponent<BlobStateMachine>();
+
     }
 
     /// <summary>
@@ -50,5 +51,4 @@ public abstract class StateBehaviour : MonoBehaviour
     /// Behaviour to run every frame while this state is active.
     /// </summary>
     public abstract void StateUpdate();
-
 }

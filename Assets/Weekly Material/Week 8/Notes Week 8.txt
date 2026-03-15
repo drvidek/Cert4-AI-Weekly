@@ -3,8 +3,7 @@ Start of lesson:
 - Have learners create a new 2D project called 'A Game About Blobs'
 - Go to Project Settings > Player > Active Input Handling and set it to 'Both' 
 
-"Last week we made an AI turret which had just one behaviour - choose a target to aim at.
-Today we're going to make a game with AI that chooses different behaviour depending on what's happening in game."
+Do the slides up until and including the''Let's make a State Machine" slide.
 
 Create a prefab, 'Blob'. Add a dynamic sprite child object.
 Set the Sprite Renderer to 'Draw Mode' - Sliced. Add a 'Blob' tag and apply it on both objects.
@@ -31,18 +30,21 @@ Make a prefab variant of the Blob, called 'BlobStateMachine'.
 Start with the StateBehaviour and BlobStateMachine scripts.
 - Discuss how we need a solid foundation for our States, reusable behaviour, but each state needs to work differently
 - Inheritance is perfect for this, but we don't want the base 'State' to be used (like our HasTarget from last week)
-- We'll use the Abstract modifier to create a skeleton State script
+- Go back to the slides and finish them off (2 slides) to introduce the idea of Abstract modifier.
+- We'll use the Abstract modifier to create a skeleton StateBehaviour script
 - Then we can Inherit and build out each state separately
 
-Create the StateBehaviour and State machine scripts.
+Create the StateBehaviour and BlobStateMachine scripts. Create the Idle and Walk states.
 
-Create the Idle and Walk states, and demonstrate those working.
+Add the BlobStateMachine and two states to the prefab, and give the states the correct Blob State enum.
+
+Demonstrate those working (back and forth between idle and walk).
 
 Then, make the Hunt and Flee states, and show it interacting with the player.
 - Manually change the size of the player blob and show the AI blob reacting differently to being bigger or smaller.
 
 ///// Part 2
-// This might be way too much content, see how you go for time, can finish next week //
+// This might be too much content, see how you go for time, can finish next week. //
 
 At the moment, we just have the AI blobs responding to one thing - the player.
 But what if we want them to all respond to each other?

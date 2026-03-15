@@ -17,15 +17,23 @@ Show the PlayerMove script. "It can be that simple when we're just testing stuff
 
 Create a Prefab and build the template NPC. We're adding a little "face" to help us see where it's looking.
 
+At this stage learners should be familiar with OOP principles from the OOP class.
+
 Discuss how last week we made a variety of strategies, but we found ourselves having to rewrite a lot of similar code between them
 - We can use OOP principles to make more reusable code
-- Today we will be focusing on Inheritance and Abstraction
+- Today we will be using a lot of Inheritance
+    - this will naturally lead us to using Encapsulation, Abstraction, and Polymorphism
 
-Write and demonstrate the scripts, using the player as the target and creating a prefab variant for each:
-- HasTarget (demonstrate that this script by itself doesn't do anything, it's just a basis)
+Write and demonstrate the scripts in turn, using the player as the target, and creating a prefab variant for each:
+- HasTarget (no demonstration)
+    - discuss that this script by itself doesn't do anything, it's just a basis
+    - we'll talk about abstract next week so just plant the seed today
 - FollowTarget
+    - make a prefab variant with a nav agent
+    - Stopping Distance of 2-3 will fix player clipping
 - FollowTargetInRange
 - LookAtTarget
+    - this seems to work, until the target moves up and the whole npc rotates upwards
 - LookAtTargetFlat
 
 Divert here to make the NPC template with separate head.
@@ -42,4 +50,7 @@ CHALLENGE: Inherit from 'LookTowardsTargetConstrained' and make a new script (10
 
 Then write the solution together.
 
-If there's time left at the end of class, have the learners download and start Assessment 1, part 1 task 1 (the research document only).
+BEFORE THE END OF CLASS:
+Have the learners download the Research document for Assessment 1.
+- Learners will be disucssing their research findings in their groups, in class, in Week 9
+- It is their responsibility to do the required research before then! (2 weeks)

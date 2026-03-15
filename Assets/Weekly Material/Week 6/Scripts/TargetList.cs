@@ -15,6 +15,17 @@ public class TargetList : MonoBehaviour
             currentTargets.Add(collision.transform);
         }
     }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        // We can safely remove from a list even if the item isn't actually on it
+        currentTargets.Remove(collision.transform);
+    }
+
+
+    ////// TEACHER! Write the rest of this script later.
+
+
     /// <summary>
     /// Checks the target list and returns the target which is nearest to the turret
     /// </summary>
@@ -42,7 +53,7 @@ public class TargetList : MonoBehaviour
 
             // If that distance is shorter than the current shortest distance...
             if (currentTargetDistance < minDistance)
-                // && IsTargetVisible(target))      //// Uncomment and fix the () pair to implement the sight-checking challenge
+            // && IsTargetVisible(target))      //// Uncomment and fix the () pair to implement the sight-checking challenge
             {
                 // We've found a new target
                 currentTarget = target;
@@ -53,12 +64,6 @@ public class TargetList : MonoBehaviour
 
         // When done, we'll have figured out which target is the nearest
         return currentTarget;
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        // We can safely remove from a list even if the item isn't actually on it
-        currentTargets.Remove(collision.transform);
     }
 
     // This is an optional solution to sight-checking.

@@ -16,6 +16,9 @@ public class FollowTarget : HasTarget
         SetDestination();
     }
 
+    ////// TEACHER! Do not use the virtual modifier at first
+    /// Come back here when making 'FollowTargetInRange'
+
     /// <summary>
     /// If there is a target, set the destination to that target.
     /// </summary>
