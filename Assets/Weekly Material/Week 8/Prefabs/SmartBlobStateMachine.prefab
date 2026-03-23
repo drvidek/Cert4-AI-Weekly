@@ -98,6 +98,34 @@ PrefabInstance:
       propertyPath: useRandomRadius
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5625922109069117915, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: onChangeSize.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625922109069117915, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: onChangeSize.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625922109069117915, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: onChangeSize.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1149558946378328990}
+    - target: {fileID: 5625922109069117915, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: onChangeSize.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625922109069117915, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: onChangeSize.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resize
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625922109069117915, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: onChangeSize.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BlobAwareness, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625922109069117915, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
+      propertyPath: onChangeSize.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6851719474617330535, guid: f09343c24bb144e0fb800b6b52e60132, type: 3}
       propertyPath: m_Name
       value: SmartBlobStateMachine
@@ -186,6 +214,7 @@ MonoBehaviour:
   awarenessRange: 5
   playerBlob: {fileID: 0}
   focusedTransform: {fileID: 0}
+  stateCurrent: {fileID: 0}
 --- !u!114 &8528829574837781606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +230,7 @@ MonoBehaviour:
   blobState: 0
   durationIdleMin: 0.5
   durationIdleMax: 1.5
+  durationIdleCurrent: 0
 --- !u!114 &4551823891736222594
 MonoBehaviour:
   m_ObjectHideFlags: 0

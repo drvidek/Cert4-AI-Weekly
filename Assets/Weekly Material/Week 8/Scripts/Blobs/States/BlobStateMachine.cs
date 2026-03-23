@@ -15,7 +15,7 @@ public class BlobStateMachine : MonoBehaviour
     /// </summary>
     public Transform focusedTransform;
 
-    protected StateBehaviour stateCurrent;
+    [SerializeField] protected StateBehaviour stateCurrent;
     protected BlobSize mySize;
 
     public virtual void Start()
@@ -98,7 +98,7 @@ public class BlobStateMachine : MonoBehaviour
     public virtual bool IsInDanger()
     {
         // Check if the focused transform is in range of the blob
-        return IsInRange(focusedTransform, awarenessRange + 2f);
+        return IsInRange(focusedTransform, awarenessRange * GetBlobRadius() + 2f);
     }
 
     /// <summary>
@@ -119,5 +119,10 @@ public class BlobStateMachine : MonoBehaviour
     public bool IsInRange(Transform target, float distance)
     {
         return Vector3.Distance(transform.position, target.position) <= distance;
+    }
+
+    public float GetBlobRadius()
+    {
+        return mySize.radius;
     }
 }

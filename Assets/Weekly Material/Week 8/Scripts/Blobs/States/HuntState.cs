@@ -14,7 +14,7 @@ public class HuntState : StateBehaviour
     public override void StateUpdate()
     {
         // If we ate our target already, or the hunt target is out of range...
-        if (!stateMachine.focusedTransform || !stateMachine.IsInRange(stateMachine.focusedTransform, disengageDistance))
+        if (!stateMachine.focusedTransform || !stateMachine.IsInRange(stateMachine.focusedTransform, disengageDistance * stateMachine.GetBlobRadius()))
         {
             // Go back to Idle
             ChangeState(BlobState.Idle);

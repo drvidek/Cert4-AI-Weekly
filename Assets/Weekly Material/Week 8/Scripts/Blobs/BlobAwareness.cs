@@ -24,24 +24,30 @@ public class BlobAwareness : MonoBehaviour
 
     void Start()
     {
+        Secure();
+
+        // Ensure we have the correct awareness range
+        Resize();
+    }
+
+    void Secure()
+    {        
         // Get the components
         trigger = GetComponent<CircleCollider2D>();
 
         // BlobSize component is on our parent object
         mySize = transform.parent.GetComponent<BlobSize>();
 
-        // Ensure we have the correct awareness range
-        Resize();
     }
 
-    
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         // If the thing that entered has a BlobSize component
         if (collision.GetComponent<BlobSize>())
         {
             BlobSize blob = collision.GetComponent<BlobSize>();
-            
+
             // Add it to the list of blobs
             nearbyBlobs.Add(blob);
             CheckNewBlob(blob);
@@ -65,6 +71,8 @@ public class BlobAwareness : MonoBehaviour
     /// </summary>
     public void Resize()
     {
+        Secure();
+        
         // Set the radius of our trigger based on how big our blob size is
         trigger.radius = mySize.radius * RadiusRatio;
     }

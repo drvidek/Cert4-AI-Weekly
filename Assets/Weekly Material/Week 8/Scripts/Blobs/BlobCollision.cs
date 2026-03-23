@@ -26,7 +26,7 @@ public class BlobCollision : MonoBehaviour
                 mySize.Resize();
 
                 // Destroy the other blob
-                Destroy(otherSize.transform.root.gameObject);
+                Destroy(otherSize.transform.parent.gameObject);
             }
         }
     }

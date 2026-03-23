@@ -93,6 +93,7 @@ MonoBehaviour:
   awarenessRange: 5
   playerBlob: {fileID: 0}
   focusedTransform: {fileID: 0}
+  stateCurrent: {fileID: 0}
 --- !u!114 &6489016573455896926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +109,7 @@ MonoBehaviour:
   blobState: 0
   durationIdleMin: 0.5
   durationIdleMax: 1.5
+  durationIdleCurrent: 0
 --- !u!114 &5108963341458752939
 MonoBehaviour:
   m_ObjectHideFlags: 0

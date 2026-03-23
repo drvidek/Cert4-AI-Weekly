@@ -6,7 +6,7 @@ public class IdleState : StateBehaviour
     // The longest the blob can wait during Idle state
     public float durationIdleMax = 1.5f;
     // How long the blob currently has left to wait in an Idle state
-    private float durationIdleCurrent;
+    public float durationIdleCurrent;
 
     public override void Enter()
     {

@@ -6,8 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Weekly Material/Week 8/AGameAboutBlobs.unity
+    guid: 78276049ca54e4480ad9b0a495f7b3bf
+  - enabled: 1
+    path: Assets/Weekly Material/Week 6/AI Turret.unity
+    guid: 79c604ecaa19d4f5bbbb7885393cdebb
+  - enabled: 1
+    path: Assets/Weekly Material/Week 4/Scenes/ComplexTerrain.unity
+    guid: 62a05521b650446ec92543374e3d4d17
+  - enabled: 1
+    path: Assets/Weekly Material/Week 5/NavMesh2.unity
+    guid: 1831c2b322ae34f55a2bfe2fb36445ac
+  - enabled: 1
+    path: Assets/Weekly Material/Week 4/Scenes/NavMeshIntro.unity
+    guid: 522702f920e874ca6b8ac496851ba13d
+  - enabled: 1
+    path: Assets/Weekly Material/Week 11/NavMeshMaze.unity
+    guid: 76c10a71d37994ff5961f64377f7968e
+  - enabled: 1
+    path: Assets/Weekly Material/Week 7/OOP And AI.unity
+    guid: 59e1199139e974f8c82ba25f080605ed
+  - enabled: 1
+    path: Assets/Weekly Material/Week 3/Simple2DWaypoints.unity
+    guid: 825ff3169eaad4cf1ae76b6eb3a316cb
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 99f9c9493070a9d4c979a8fec7c5a8d3, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

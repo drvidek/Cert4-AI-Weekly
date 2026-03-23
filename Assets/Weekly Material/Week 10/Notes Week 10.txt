@@ -1,0 +1,6 @@
+
+Start of lesson:
+- Have learners create a new project called Algorithms
+
+Go through the slides
+
