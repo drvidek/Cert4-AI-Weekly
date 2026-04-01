@@ -35,10 +35,9 @@ public class BubbleUpSort : SortContents
                     // Flag a swap has been performed this loop
                     swapPerformed = true;
                 }
+                // Count up one loop
+                loops++;
             }
-            
-            // Count up one loop
-            loops++;
         }
 
         // At the end, we'll see how many times the algorithm had to run to fully sort the list.
