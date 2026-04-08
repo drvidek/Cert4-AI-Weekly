@@ -1,19 +1,9 @@
-using UnityEngine;
 
 public class BubbleUpSort : SortContents
 {
     protected override void UniqueSort()
     {
-        // Bubble up sort
-
-        // Repeat the following, until no numbers are swapped:
-            // Start at index 0.
-            // If the current number is smaller than the next number,
-                // Swap the two numbers.
-            // Move to the next index, and compare the two numbers again.
-
-        // To count how many times we had to work through the collection
-        int loops = 0;
+        loops = 0;
 
         // Whether or not two numbers were swapped at least once during this collection
         bool swapPerformed = true;
@@ -29,6 +19,8 @@ public class BubbleUpSort : SortContents
                 // If the current number is smaller than the next number...
                 if (contentToSort[i] < contentToSort[i + 1])
                 {
+                    print($"{contentToSort[i]} is smaller than {contentToSort[i + 1]} so swapping these numbers.");
+
                     // Swap the two numbers
                     Swap(i, i + 1);
 
@@ -38,6 +30,8 @@ public class BubbleUpSort : SortContents
                 // Count up one loop
                 loops++;
             }
+
+            print($"Current array: {string.Join(", ", contentToSort)}");
         }
 
         // At the end, we'll see how many times the algorithm had to run to fully sort the list.

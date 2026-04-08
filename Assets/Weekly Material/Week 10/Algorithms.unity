@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 479264651}
   - component: {fileID: 479264650}
+  - component: {fileID: 479264652}
   m_Layer: 0
   m_Name: SortMe
   m_TagString: Untagged
@@ -148,7 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 000f9e7c3b0db4e89b5f365f04380490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BubbleUpSort
-  contentToSort: 04000000030000000300000002000000020000000100000001000000000000000000000000000000
+  contentToSort: 4dffffff74ffffff9dffffff9fffffffa3ffffffe3fffffff4ffffff23000000bb000000c1000000
+  order: 0
 --- !u!4 &479264651
 Transform:
   m_ObjectHideFlags: 0
@@ -164,6 +166,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &479264652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479264649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da24ad39b41a748e0a06d95a960eceeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuickSort
+  contentToSort: c0000000b4000000a90000007b000000750000005e000000fcfffffff3ffffffeeffffffbfffffff
+  order: 0
 --- !u!1 &572759487
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,14 +298,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105640945}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize2D: {x: 0.5, y: 0.5}
+  m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1

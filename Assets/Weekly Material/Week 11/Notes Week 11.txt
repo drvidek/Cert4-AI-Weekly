@@ -1,6 +1,10 @@
 
 Start of lesson:
-- Have learners create a new project called Algorithms
+- Have learners open their project from Week 5 (the navmesh maze)
 
-Go through the slides
+Go through the slides, until the end (Our First Automation)
 
+- UnityEditor namespace
+- MenuItem attribute
+- ExecuteInEditMode attribute
+- 

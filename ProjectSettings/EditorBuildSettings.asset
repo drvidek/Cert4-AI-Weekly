@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Weekly Material/Week 4/Scenes/NavMeshIntro.unity
     guid: 522702f920e874ca6b8ac496851ba13d
   - enabled: 1
-    path: Assets/Weekly Material/Week 10/NavMeshMaze.unity
+    path: Assets/Weekly Material/Week 11/NavMeshMaze.unity
     guid: 76c10a71d37994ff5961f64377f7968e
   - enabled: 1
     path: Assets/Weekly Material/Week 7/OOP And AI.unity

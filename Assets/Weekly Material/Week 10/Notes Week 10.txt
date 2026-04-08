@@ -1,10 +1,25 @@
 
 Start of lesson:
-- Have learners open their project from Week 5 (the navmesh maze)
+- Have learners create a new project called Algorithms
 
-Go through the slides, until the end (Our First Automation)
+Go through the slides completely.
 
-- UnityEditor namespace
-- MenuItem attribute
-- ExecuteInEditMode attribute
-- 
+Create and write the base 'SortContents' script, excluding the solution to the challenge provided later.
+- Discuss the 'ContextMenu' attribute
+
+Create the 'BubbleUp' script, inherit from SortContents + empty the override methods, do not write any other code yet.
+
+Attach BubbleUp to a game object and demonstrate the ContextMenu items.
+
+Next, create an abstract diagram with the learners for Bubble Up.
+
+THEN you can write the script together and demonstrate the final result.
+
+Next write the QuickSort script together.
+
+HOMEWORK CHALLENGE: Choose whether the list should sort smallest to highest or opposite.
+Tips:
+- Create a function in our base class
+- Use that function in our inheriting classes
+
+A solution to this challenge exists in these files for reference.
