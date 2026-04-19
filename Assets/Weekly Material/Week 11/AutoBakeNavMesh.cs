@@ -13,9 +13,27 @@ public class AutoBakeNavMesh : MonoBehaviour
     // i.e. 'double' the precision of a float
     private double lastBakeTime;
 
+    #region Menu Items
+    ////// TEACHER! Do not write this section at first.
+    /// Write the rest of the script and show it working in-editor first.
+    /// Then discuss how it would be more convenient to be able to start and stop the auto-bake with menu items.
+    
     private static GameObject bakerObject;
 
-    #region Menu Items
+    /// <summary>
+    /// Create a new game object with an AutoBakeNavMesh component attached.
+    /// </summary>
+    /// <returns></returns>
+    private static GameObject CreateNewBaker()
+    {
+        // Create a new game object, named 'AutoBaker', with the AutoBakeNavMesh component attached. 
+        GameObject baker = new GameObject("AutoBaker", typeof(AutoBakeNavMesh));
+
+        // Mark the object as EditorOnly for build safety
+        baker.tag = "EditorOnly";
+
+        return baker;
+    }
 
     [MenuItem("Tools/AI/AutoBake NavMesh/Start")]
     public static void StartAutoBake()
@@ -34,21 +52,6 @@ public class AutoBakeNavMesh : MonoBehaviour
         bakerObject.SetActive(true);
     }
 
-    /// <summary>
-    /// Create a new game object with an AutoBakeNavMesh component attached.
-    /// </summary>
-    /// <returns></returns>
-    private static GameObject CreateNewBaker()
-    {
-        // Create a new game object, named 'AutoBaker', with the AutoBakeNavMesh component attached. 
-        GameObject baker = new GameObject("AutoBaker", typeof(AutoBakeNavMesh));
-
-        // Mark the object as EditorOnly for build safety
-        baker.tag = "EditorOnly";
-
-        return baker;
-    }
-
     [MenuItem("Tools/AI/AutoBake NavMesh/Pause")]
     public static void PauseAutoBake()
     {
@@ -56,7 +59,7 @@ public class AutoBakeNavMesh : MonoBehaviour
     }
 
     // By passing 'true' here, we mark this method as a Menu Item validator
-    // Return true/false to enable or disable the menu item
+    // The method should return true/false to enable/disable the menu item at the path given
     [MenuItem("Tools/AI/AutoBake NavMesh/Pause", true)]
     static bool PauseAutoBakeValidate()
     {
@@ -66,6 +69,7 @@ public class AutoBakeNavMesh : MonoBehaviour
     [MenuItem("Tools/AI/AutoBake NavMesh/Stop")]
     public static void StopAutoBake()
     {
+        // DestroyImmediate should be used when in-editor
         DestroyImmediate(bakerObject);
     }
 

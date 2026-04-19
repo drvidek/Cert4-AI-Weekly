@@ -2,9 +2,32 @@
 Start of lesson:
 - Have learners open their project from Week 5 (the navmesh maze)
 
-Go through the slides, until the end (Our First Automation)
+Go through the slides entirely.
 
-- UnityEditor namespace
-- MenuItem attribute
-- ExecuteInEditMode attribute
-- 
+Write the 'BakeAllNavMesh' script first:
+- Discuss the UnityEditor namespace
+- Discuss using the MenuItem attribue
+- Discuss 'marking dirty' to tell the editor a scene needs saving
+- Demonstrate it working
+
+Create the Editor folder and put the script in it.
+
+Write the AutoBakeNavMesh script, ignoring the Menu Item section at first.
+- Discuss the 'ExecuteAlways' attribute
+- Demonstrate the in-scene behaviour working
+
+Then, add the menu item functions:
+- Explain the MenuItem validation attribute
+- Show the items working
+
+CHALLENGE: Write MenuItem functions - 'OpenAllDoors' and 'CloseAllDoors'
+- Find all the doors in the scene
+- Set each door.isOpen to true/false accordingly
+
+If there's time left in the lesson, do this, otherwise assign homework...
+
+HOMEWORK: Conceptualise your own MenuItem function
+- Think about something simple but repetitive you do in Unity
+- Consider the process involved and how you might be able to automate it
+    - Even if you don't know the specifics, have a guess what might be possible
+- Create an abstract and bring it next week

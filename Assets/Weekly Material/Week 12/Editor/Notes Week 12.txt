@@ -1,0 +1,57 @@
+
+Start of lesson:
+- Have learners create a new project called 'Editor Windows'
+
+Start the slides, up to and including the first 'From Corporate' slide.
+- Do this slide one line at a time
+- For the first two points, do the quads and capsules manually
+- When you get to 100 Spheres, stop and discuss that there must be a better way
+
+Continue the slides until and including 'Editor Window'
+- Discuss how this is a perfect opportunity for automation
+- BUT this is not as 'one-click' as our 'Bake all NavMesh' process
+- We can make a Unity editor window which will take in a number, and make that many copies of an object
+
+Write the Copier script together:
+- Discuss fields (a value to be filled in by the user)
+- Discuss error prevention
+
+Continue with the slides, click once and create 1000 cubes with the tool. Click again to the next point and... oops!
+- Let's write another editor window to address this new problem
+
+Write the Renamer script together, and test it.
+
+Now we know the basics, let's make a more complex window - a Prefab Placer. This will:
+- Take in a base object (prefab or from the scene)
+- Take a name and position
+- Allow the user to spawn a copy of the object into the scene
+
+Start making the PrefabPlacer 
+
+Discuss how EnumPopup can work with any Enum
+    - Therefore, we must take the generic 'enum' and convert it to our enum
+
+Go back to the slides and discuss type casting (1 slide).
+
+Continue with and finish the script.
+
+CHALLENGE: Extend this script with a Preview of the prefab
+- Use a variable 'objectPreview' to track a copy in the scene
+- Place it at the scenePosition value
+- Use a ChangeCheck to replace the preview when the prefab changes
+
+Write this solution together.
+
+If there's extension time... (otherwise skip to Homework)
+
+BONUS CHALLENGE: Create an Editor Window which does the following (20-30 mins)
+- Use 'GameObject.CreatePrimitive' to create a new shape in the scene (Sphere, Cube, Capsule, etc)
+- Set the name of the object from the user
+- Set the scale of the shape based on a Vector3 from the user
+- Set the position in the scene to spawn the shape
+- Preview the shape being created
+
+HOMEWORK: Conceptualise your own Editor Window
+- Now you know how to automate tasks while taking inputs from fields or selected objects
+- Like last week, think of a task in Unity you might want to automate
+- Create an abstract and bring it next week (use a parallelogram to indicate an input)
