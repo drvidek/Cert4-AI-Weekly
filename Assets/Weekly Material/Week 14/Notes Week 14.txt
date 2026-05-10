@@ -1,0 +1,36 @@
+
+Start of lesson:
+- Have learners open the same project as last week, with the StatBlock and NPC script.
+
+No slides this week, we're extending what we learned about Custom Property Drawers.
+
+We've been using Attributes like 'Tooltip' and 'SerializeField' for a while now.
+- You might also know about 'Range' - let's try it now
+
+Open the 'NPC' script and add the 'playerRelationshipLevel' float, apply the built-in Range attribute.
+
+Demonstrate how it looks in-editor. We will recreate this to learn how we can make our own attributes.
+
+Start with Custom.RangeAttribute script.
+- Discuss namespaces.
+
+Replace the built in Range with Custom.Range and show how now, it just draws the default float field.
+
+Now write the Custom.RangeAttributeDrawer. Demonstrate how we have the exact same result as before.
+
+Next, write the RandomName attribute.
+
+Create a Resources folder in the root Assets folder.
+- Resources.Load normally finds any 'Resources' folder in your project
+    - In editor, only Assets/Resources works
+- Put a text file titled 'NPC Names' in here and write a list of names with linebreaks between them
+
+Write the RandomNameAttributeDrawer script.
+
+Finally, we're going to write a widely usable Attribute to randomise a variety of types.
+
+Write the RandomiseAttribute and then Drawer together
+- Discuss how this will be a bit of work upfront with long-term payoff
+- Once done, implement it with the various fields in NPC.
+
+If there's time left in the lesson, go through Assessment 3 and get them to start.

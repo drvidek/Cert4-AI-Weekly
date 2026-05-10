@@ -8,6 +8,7 @@ public class RandomNameAttributeDrawer : PropertyDrawer
     
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
+        // If the property type is not String, draw an error message.
         if (property.propertyType != SerializedPropertyType.String)
         {
             EditorGUI.LabelField(position, "Use RandomName with a string field");
@@ -42,7 +43,7 @@ public class RandomNameAttributeDrawer : PropertyDrawer
         if (GUI.Button(rectButton, "R"))
         {
             // Set the underlying string value of the property to a random name
-            property.stringValue = randomName.Get();
+            property.stringValue = randomName.GetRandom();
         }
 
         EditorGUI.EndProperty();

@@ -28,16 +28,20 @@ public class RandomiseAttributeDrawer : PropertyDrawer
         // Draw whatever field is appropriate for the property with the new rect
         EditorGUI.PropertyField(rectProperty, property);
 
-        // If the user presses the R (random) button...
-        if (GUI.Button(rectButton, new GUIContent("R", "Randomise the value")))
+        // Get a label which says 'R' and has a tooltip on hover
+        GUIContent buttonLabel = new GUIContent("R", "Randomise the value");
+
+        // If the user presses the random button...
+        if (GUI.Button(rectButton, buttonLabel))
         {
-            float w = 0, x = 0, y = 0, z = 0, h = 1, s = 1, v = 1;
+            // Get default values
+            float x = 0, y = 0, z = 0, w = 0, h = 1, s = 1, v = 1;
             int ix = 0, iy = 0, iz = 0;
 
             #region Calculate random values as needed
             switch (random.rangeCount)
             {
-                // Fully randomise with no min/max provided
+                // Fully randomise if no min/max provided in constructor
                 case 0:
                     x = random.Float();
                     y = random.Float();
@@ -52,7 +56,7 @@ public class RandomiseAttributeDrawer : PropertyDrawer
                     iy = random.Int();
                     iz = random.Int();
                     break;
-                // Only randomise first value within range
+                // Only randomise first value within ranges provided
                 case 1:
                     x = random.Float(0);
 

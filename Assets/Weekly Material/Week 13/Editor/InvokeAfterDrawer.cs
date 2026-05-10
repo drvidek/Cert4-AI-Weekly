@@ -1,14 +1,17 @@
 using UnityEngine;
 using UnityEditor;
 
+// Mark this Editor as a custom editor for the InvokeAfter class
 [CustomEditor(typeof(InvokeAfter))]
-public class InvokeAfterDrawer : Editor
+public class InvokeAfterDrawer : Editor // Editor class allows us to draw a UnityEngine.Object inspector
 {
+    // Override OnInspectorGUI to define how the object looks in the inspector
     public override void OnInspectorGUI()
     {
         #region Get the serialized properties
         // To find a serialized property, it must either be public, or marked [SerializeField]
         // Classes not inheriting from UnityEngine.Object must also be marked [System.Serializable]
+        // We find properties by name, given as a string (case sensitive like always!)
         SerializedProperty timeMax = serializedObject.FindProperty("timeMax");
         SerializedProperty timeRemaining = serializedObject.FindProperty("timeRemaining");
         SerializedProperty isTicking = serializedObject.FindProperty("isTicking");
@@ -37,7 +40,7 @@ public class InvokeAfterDrawer : Editor
         #endregion
 
         #region Draw buttons to run functions
-        // To run functions on our component, we need to retrieve & cast it from the serialized form
+        // To run functions on our component, we need to retrieve & cast it into the right class
         InvokeAfter target = serializedObject.targetObject as InvokeAfter;
 
         EditorGUILayout.BeginHorizontal();
@@ -45,7 +48,7 @@ public class InvokeAfterDrawer : Editor
         {
             if (target.isTicking)
             {
-                target.Pause(); // This is all possible because the functions are public
+                target.Pause(); // This is possible because the functions and variables are public
             }
             else
             {

@@ -1,0 +1,34 @@
+
+Start of lesson:
+- Have learners open their week 7 project (OOP and AI) or create a new project
+
+Do the slides up to and including 'Therefore...'
+
+Write the InvokeAfter script. Demonstrate it working.
+
+Discuss how it would be nice to organise these fields into a more compact, intuitive format.
+- We can make a custom Editor script to apply to our InvokeAfter component
+
+Create an Editor folder and write the InvokeAfterDrawer script
+- First write the final line, so we can test fields as we add them:
+    serializedObject.ApplyModifiedProperties();
+- Now write all the code before it, starting from the top
+- Demonstrate the fields appearing as each section is done
+
+Create the 'StatBlock' script
+- Point out 'System.Serializable' is telling our code this class needs to be Serializable
+
+Create the NPC script, and implement the StatBlock class. Display it in the inspector.
+- The fields take up a huge area when expanded
+- The information is completely gone when collapsed
+- Let's write a custom drawer for the 
+
+Discuss how, so far, EditorGUILayout is doing a lot of heavy lifting for us
+- When we want to customise how Properties look, Layout functions are not supported (too CPU heavy)
+- We must use GUI and EditorGUI only
+- This means we must learn about Rects
+
+Do the final 2 slides.
+
+Come back and write the StatBlockDrawer script.
+- Do not write the 'If not expanded' section at first, skip down and write it at the end
