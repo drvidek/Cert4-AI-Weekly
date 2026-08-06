@@ -2,7 +2,11 @@
 Start of lesson:
 - Have learners create a new 2D project called 'Simple 2D Waypoints'
 
-First do the 'MoveTowardsObject' script as a kind of programming refresher. Demonstrate it works in scene.
+Go through the slides and the Moodle, and do an early read through of each assessment.
+
+Then go to the project.
+
+Do the 'MoveTowardsObject' script as a kind of programming refresher. Demonstrate it works in scene.
 
 Take that foundation, and expand it into the 'MoveBetweenWaypoints' script.
 - "We need to track more than one position - does anyone remember a way we can track more than one thing in a variable?"
