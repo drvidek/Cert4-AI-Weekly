@@ -45,7 +45,7 @@ Challenge: write a script which will move the door object between closed and ope
 
 Write the 'Door' script together
 - emphasise there are different solutions, if yours works, you did it, even if your answer looks different to this.
-- Show the door carving the 
+- Show the door carving the mesh when it moves
 
 
 NAV AREAS AND MODIFIER VOLUMES:
