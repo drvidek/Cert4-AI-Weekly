@@ -58,7 +58,11 @@ Demonstrate the turret now shoots at the closest target.
 Write the "RotateTowardsTarget" script. Attach to the Pivot, disable the other components, connect the TargetList object again.
 
 End of lesson:
-- Challenge - add walls to the environment (2D Objects > Physics > Static Sprite), make the turret only shoot the nearest target which is also not protected by a wall
-    - Will need to inject a raycast into the iteration to check if there's a wall between the turret and the target
+- Challenges
+EASY: Make the turret focus on the target closest to a different object, i.e. protecting a base
+
+
+HARD: Add walls to the environment (2D Objects > Physics > Static Sprite), make the turret only shoot the nearest target which is also not protected by a wall
+- Will need to inject a raycast into the iteration to check if there's a wall between the turret and the target
 - Review together next week, or if there's lots of time do in the last part of class and share answers/solutions
 - Demonstrate by moving the targets closer, further, behind the wall, and move the wall out of the way.
