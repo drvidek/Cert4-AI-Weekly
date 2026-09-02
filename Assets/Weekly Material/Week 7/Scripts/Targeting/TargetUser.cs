@@ -4,13 +4,10 @@ using UnityEngine;
 /// A component which provides the framework for game behaviours that require a target object,
 /// such as looking or aiming at something, or following something.
 /// </summary>
-public class HasTarget : MonoBehaviour
+public class TargetUser : MonoBehaviour
 {
     [Tooltip("The transform considered the target of this component")]
     [SerializeField] protected Transform target;
-
-    // Help us track if there is a target assigned
-    private bool isTargetAssigned;
 
     /// <summary>
     /// Get the direction to the target as a normalized vector.
@@ -32,23 +29,20 @@ public class HasTarget : MonoBehaviour
     {
         // This is Encapsulation:
         // We provide a controlled way to set a new target,
-        // making sure we update the related private variables as well
+        // without exposing the target transform with a public variable
         target = newTarget;
-
-        // 'target != null' is a statement which will be evaluated as true or false
-        isTargetAssigned = (target != null);
     }
 
     /// <summary>
     /// Check if the target is already set.
     /// </summary>
     /// <returns>True if a target is set, else false</returns>
-    public bool IsTargetSet()
+    public bool HasTarget()
     {
         // This is also Abstraction:
         // The method provides a way to check if the target is set,
         // without needing to know how the target is stored or managed.
-        return isTargetAssigned;
+        return target != null;
     }
 
     /// <summary>

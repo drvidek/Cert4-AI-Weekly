@@ -1,6 +1,6 @@
 using UnityEngine.AI;
 
-public class FollowTarget : HasTarget
+public class FollowTarget : TargetUser
 {
     // protected is like private, but inheriting scripts can see it
     protected NavMeshAgent agent;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LookTowardsTarget : HasTarget
+public class LookTowardsTarget : TargetUser
 {
     [Tooltip("How fast to look towards the target, in degrees per second")]
     public float lookSpeed = 180;

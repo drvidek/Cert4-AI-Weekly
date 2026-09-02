@@ -50,6 +50,34 @@ CHALLENGE: Inherit from 'LookTowardsTargetConstrained' and make a new script (10
 
 Then write the solution together.
 
+Discuss how this approach of extending behaviour is one benefit to Inheritance.
+- Now we'll make a few scripts which will demonstrate the real power of Polymorphism
+
+Create the Interaction script, then the Interact script
+
+In the scene:
+- Place a rigidbody on the Player, turn off gravity, and tick all Constraints.
+- Add a sphere collider trigger child object to the player, and attach the Interact script
+- Add the Interaction component to any NPC
+
+Demonstrate this working. Discuss a sphere collider is imprecise and can't tell what direction the player is facing.
+- A full game could use a trigger which is just in front of the player
+- Alternatively you could raycast forward from the player
+- In first person you'd just raycast from the centre of the camera
+
+Now write the 'InteractToFollow' script together. Attach it to the FollowTargetInRange NPC from earlier.
+
+Demonstrate the NPC will follow the player on and off when interacting with them in range.
+
+Encourage the learners to try writing their own 'Interaction', for an NPC or something else. Some suggestions are:
+- Jump up and down or spin around
+- Move to a new location
+- Show a dialogue box
+Or for a non-NPC:
+- Collect an item
+- Open a door or chest
+- Pull a lever to trigger something else
+
 BEFORE THE END OF CLASS:
 Have the learners download the Research document for Assessment 1.
 - Learners will be disucssing their research findings in their groups, in class, in Week 9
