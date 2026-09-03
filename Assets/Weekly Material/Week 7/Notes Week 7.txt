@@ -32,9 +32,6 @@ Write and demonstrate the scripts in turn, using the player as the target, and c
     - make a prefab variant with a nav agent
     - Stopping Distance of 2-3 will fix player clipping
 - FollowTargetInRange
-- LookAtTarget
-    - this seems to work, until the target moves up and the whole npc rotates upwards
-- LookAtTargetFlat
 
 Divert here to make the NPC template with separate head.
 
