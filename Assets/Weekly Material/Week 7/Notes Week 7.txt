@@ -24,20 +24,22 @@ Discuss how last week we made a variety of strategies, but we found ourselves ha
 - Today we will be using a lot of Inheritance
     - this will naturally lead us to using Encapsulation, Abstraction, and Polymorphism
 
-Write and demonstrate the scripts in turn, using the player as the target, and creating a prefab variant for each:
+Make the NPC template with separate head. Encourage them to name their NPC something fun or silly.
+
+Write and demonstrate the scripts in turn, using the player as the target, and replacing the NPC's components for each:
 - HasTarget (no demonstration)
     - discuss that this script by itself doesn't do anything, it's just a basis
     - we'll talk about abstract next week so just plant the seed today
 - FollowTarget
-    - make a prefab variant with a nav agent
+    - Put this script on the NPC alonsgide the NavMesh Agent
     - Stopping Distance of 2-3 will fix player clipping
 - FollowTargetInRange
-
-Divert here to make the NPC template with separate head.
-
-Continue with the scripts:
+    - replace FollowTarget component
 - LookTowardsTarget
+    - attach this to the NPC's head
+    - turn off the NPC movement and show the head rotates 360
 - LookTowardsTargetConstrained
+    - replace LookTowardsTarget
 
 CHALLENGE: Inherit from 'LookTowardsTargetConstrained' and make a new script (10 mins)
 - Give the looking behaviour a maximum range
@@ -45,10 +47,10 @@ CHALLENGE: Inherit from 'LookTowardsTargetConstrained' and make a new script (10
 - Leverage our existing IsTargetInRage function, and look at FollowTargetInRange for help
 - Don't overcomplicate!
 
-Then write the solution together.
+Write the solution together.
 
-Discuss how this approach of extending behaviour is one benefit to Inheritance.
-- Now we'll make a few scripts which will demonstrate the real power of Polymorphism
+Discuss how this approach of extending behaviour is only one benefit to Inheritance
+- Now we'll make a few scripts which will demonstrate the power of Polymorphism
 
 Create the Interaction script, then the Interact script
 
