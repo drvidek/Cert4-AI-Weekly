@@ -219,10 +219,9 @@ MonoBehaviour:
   - {fileID: 4551823891736222594}
   - {fileID: 3875557718548853942}
   - {fileID: 8683396053547236912}
-  awarenessRange: 5
-  playerBlob: {fileID: 0}
-  focusedTransform: {fileID: 0}
   stateCurrent: {fileID: 0}
+  awarenessRange: 5
+  focusedTransform: {fileID: 0}
 --- !u!114 &8528829574837781606
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Weekly Material/Week 8/AGameAboutBlobs.unity
+    path: Assets/Weekly Material/Week 8 + 9/AGameAboutBlobs.unity
     guid: 78276049ca54e4480ad9b0a495f7b3bf
   - enabled: 1
     path: Assets/Weekly Material/Week 6/AI Turret.unity
