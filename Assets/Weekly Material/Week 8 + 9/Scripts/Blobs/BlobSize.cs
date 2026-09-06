@@ -9,7 +9,7 @@ public class BlobSize : MonoBehaviour
     // Whether or not to start with a randomised radius
     public bool useRandomRadius;
 
-    public UnityEvent onChangeSize;
+    public UnityEvent<float> onChangeSize;
 
     // Reference to this blob's collider
     new private CircleCollider2D collider;
@@ -62,7 +62,7 @@ public class BlobSize : MonoBehaviour
         // Set the size of the sprite to match the size of the collider
         sprite.size = radius * 2f * Vector2.one;
 
-        onChangeSize.Invoke();
+        onChangeSize.Invoke(radius);
     }
 
     /// <summary>

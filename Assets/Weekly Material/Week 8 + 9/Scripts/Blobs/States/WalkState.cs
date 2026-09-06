@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WalkState : StateBehaviour
+public class WalkState : BlobState
 {
     public float speed = 1.5f;
     // The maximum distance to wander from your current location
@@ -8,6 +8,11 @@ public class WalkState : StateBehaviour
 
     // The current target for wandering
     private Vector3 currentTarget;
+
+    public override string StateKey()
+    {
+        return "Walk";
+    }
 
     public override void Enter()
     {
@@ -24,15 +29,13 @@ public class WalkState : StateBehaviour
         // Calculate and normalise the direction
         Vector3 direction = currentTarget - transform.position;
         direction.Normalize();
-    
+
         // Move towards the current target
         Move(speed * Time.deltaTime * direction);
 
-        // If we arrive at the current target...
-        if (Vector3.Distance(transform.position, currentTarget) < 0.1f)
+        if (Vector3.Distance(transform.position, currentTarget) <= 0.1f)
         {
-            // Change to the Idle state
-            ChangeState(BlobState.Idle);
+            ChangeState("Idle");
         }
     }
 }

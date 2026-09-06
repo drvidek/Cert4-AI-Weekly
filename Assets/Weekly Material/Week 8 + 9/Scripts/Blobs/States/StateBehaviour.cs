@@ -1,47 +1,25 @@
 using UnityEngine;
 
-public enum BlobState
-{
-    Idle,
-    Walk,
-    Hunt,
-    Flee
-}
-
 // 'abstract' means we can't use this class directly,
 // we have to inherit and extend the class to use it
 public abstract class StateBehaviour : MonoBehaviour
 {
-    protected BlobStateMachine stateMachine;
+    protected StateMachine stateMachine;
 
-    [Tooltip("Which state is associated with this behaviour?")]
-    public BlobState blobState;
-
-    // Awake is like Start, but runs before anything else
     void Awake()
     {
-        stateMachine = GetComponent<BlobStateMachine>();
-
+        stateMachine = GetComponent<StateMachine>();
     }
 
     /// <summary>
     /// Change to a different state, triggering the new state's Enter behaviour.
     /// </summary>
     /// <param name="newState"></param>
-    public void ChangeState(BlobState newState)
+    public void ChangeState(string newState)
     {
         stateMachine.ChangeState(newState);
     }
     
-    /// <summary>
-    /// Move the state machine's transform by the given movement vector. This does not account for speed or time.
-    /// </summary>
-    /// <param name="movement"></param>
-    public void Move(Vector3 movement)
-    {
-        stateMachine.transform.position += movement;
-    }
-
     /// <summary>
     /// Behaviour to run when newly entering this state.
     /// </summary>
@@ -51,4 +29,9 @@ public abstract class StateBehaviour : MonoBehaviour
     /// Behaviour to run every frame while this state is active.
     /// </summary>
     public abstract void StateUpdate();
+
+    /// <summary>
+    /// Implement and return the key associated with this state.
+    /// </summary>
+    public abstract string StateKey();
 }

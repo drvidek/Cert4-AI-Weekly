@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HuntState : StateBehaviour
+public class HuntState : BlobState
 {
     public float speed = 2f;
 
@@ -11,13 +11,19 @@ public class HuntState : StateBehaviour
         
     }
 
+    public override string StateKey()
+    {
+        return "Hunt";
+    }
+
     public override void StateUpdate()
     {
+        var stateMachine = this.stateMachine as BlobStateMachine;
         // If we ate our target already, or the hunt target is out of range...
         if (!stateMachine.focusedTransform || !stateMachine.IsInRange(stateMachine.focusedTransform, disengageDistance * stateMachine.GetBlobRadius()))
         {
             // Go back to Idle
-            ChangeState(BlobState.Idle);
+            ChangeState("Idle");
 
             // Take no further action
             return;

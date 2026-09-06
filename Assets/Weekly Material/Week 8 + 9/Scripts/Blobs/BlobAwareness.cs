@@ -22,22 +22,18 @@ public class BlobAwareness : MonoBehaviour
 
     private List<BlobSize> biggerBlobs = new();
 
-    void Start()
+    void Awake()
     {
         Secure();
-
-        // Ensure we have the correct awareness range
-        Resize();
     }
 
     void Secure()
-    {        
+    {
         // Get the components
         trigger = GetComponent<CircleCollider2D>();
 
         // BlobSize component is on our parent object
         mySize = transform.parent.GetComponent<BlobSize>();
-
     }
 
 
@@ -69,12 +65,11 @@ public class BlobAwareness : MonoBehaviour
     /// <summary>
     /// Use the current radius of the BlobSize component to resize the awareness radius. 
     /// </summary>
-    public void Resize()
+    public void Resize(float radius)
     {
         Secure();
-        
         // Set the radius of our trigger based on how big our blob size is
-        trigger.radius = mySize.radius * RadiusRatio;
+        trigger.radius = radius * RadiusRatio;
     }
 
     /// <summary>

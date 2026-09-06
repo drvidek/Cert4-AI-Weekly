@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class IdleState : StateBehaviour
+public class IdleState : BlobState
 {
     public float durationIdleMin = .5f;
     // The longest the blob can wait during Idle state
@@ -14,6 +14,11 @@ public class IdleState : StateBehaviour
         durationIdleCurrent = Random.Range(durationIdleMin, durationIdleMax);
     }
 
+    public override string StateKey()
+    {
+        return "Idle";
+    }
+
     public override void StateUpdate()
     {
         // Count down our idle time towards 0
@@ -23,7 +28,7 @@ public class IdleState : StateBehaviour
         if (durationIdleCurrent <= 0)
         {
             // Change to the Walk state
-            ChangeState(BlobState.Walk);
+            ChangeState("Walk");
         }
     }
 

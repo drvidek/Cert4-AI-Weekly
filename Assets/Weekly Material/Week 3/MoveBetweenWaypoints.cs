@@ -29,7 +29,6 @@ public class MoveBetweenWaypoints : MonoBehaviour
     {
         // Move towards the current waypoint 
         transform.position += speed * Time.deltaTime * direction;
-
         // If the distance from the object's position to the current waypoint is less than our forgiveness
         if (Vector3.Distance(transform.position, waypoints[index].position) <= minimumDistance)
         {
