@@ -78,13 +78,12 @@ public class BlobAI : MonoBehaviour
 
     public void ChangeState(State state)
     {
-        if (hasEnteredState && this.state == state)
+        if (this.state == state)
         {
             return;
         }
 
         this.state = state;
-        hasEnteredState = true;
 
         EnterState(state);
     }
