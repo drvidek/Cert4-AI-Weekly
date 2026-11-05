@@ -21,7 +21,7 @@ public class InvokeAfterDrawer : Editor // Editor class allows us to draw a Unit
 
         #region  Draw the time remaining/maximum
         // Horizontal group will make the contained GUI stay on one row
-        EditorGUILayout.BeginHorizontal();
+        Rect rect = EditorGUILayout.BeginHorizontal();
         // SerializedProperty could hold a large number of types
         // We need to get the underlying value to modify
         EditorGUILayout.LabelField("Timer: ", GUILayout.Width(40)); // GUILayout.Width controls how wide this field is
@@ -31,6 +31,19 @@ public class InvokeAfterDrawer : Editor // Editor class allows us to draw a Unit
         EditorGUILayout.LabelField("secs remaning");
         EditorGUILayout.EndHorizontal();    // We must mark the end of the group
         #endregion
+
+        // Move our rectangle down below the horizontal group
+        rect.y += rect.height + 1;
+        rect.height = 4;
+        EditorGUI.DrawRect(rect, Color.grey);
+
+        // This COPIES rect, so we can change rectFill without changing rect
+        Rect rectFill = rect;
+        // Set the width based on a percentage of how much time is remaining
+        rectFill.width *= timeRemaining.floatValue / timeMax.floatValue;
+        EditorGUI.DrawRect(rectFill, Color.white);
+
+        EditorGUILayout.Space(6);
 
         #region Draw toggles for ticking and looping
         EditorGUILayout.BeginHorizontal();
