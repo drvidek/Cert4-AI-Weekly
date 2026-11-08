@@ -18,7 +18,6 @@ public class WalkState : BlobState
     {
         // Get a random point inside a circle, where the circle centre is 0, 0
         Vector3 randomPoint = Random.insideUnitCircle;
-
         // Using the random point and our maximum wander radius, 
         // set a new target relative to our current position 
         currentTarget = stateMachine.transform.position + (wanderRadius * randomPoint);

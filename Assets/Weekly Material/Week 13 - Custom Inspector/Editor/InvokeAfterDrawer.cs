@@ -20,6 +20,11 @@ public class InvokeAfterDrawer : Editor // Editor class allows us to draw a Unit
         #endregion
 
         #region  Draw the time remaining/maximum
+
+        ////// TEACHER! Don't get the local Rect at first
+        /// Just write 'EditorGUILayout.BeginHorizontal();' at first
+        /// Come back and add 'Rect rect = ' later, when doing the progress bar below
+        
         // Horizontal group will make the contained GUI stay on one row
         Rect rect = EditorGUILayout.BeginHorizontal();
         // SerializedProperty could hold a large number of types
@@ -31,19 +36,37 @@ public class InvokeAfterDrawer : Editor // Editor class allows us to draw a Unit
         EditorGUILayout.LabelField("secs remaning");
         EditorGUILayout.EndHorizontal();    // We must mark the end of the group
         #endregion
-
-        // Move our rectangle down below the horizontal group
+        
+        ////// TEACHER! Don't do this at first.
+        /// Save this for the end of the lesson.
+        /// Write the rest of the script first, then come back as instructed
+        #region Draw a progress bar
+        // We got a rect from our horizontal group above
+        // It is the same size as the horizontal group
+        // Therefore, we can use it to draw our progress bar directly below the timer
+    
+        // Move the rectangle down one row plus one pixel
         rect.y += rect.height + 1;
+
+        // Make the rectangle short in height
         rect.height = 4;
+
+        // Draw the background of the progress bar
         EditorGUI.DrawRect(rect, Color.grey);
 
         // This COPIES rect, so we can change rectFill without changing rect
         Rect rectFill = rect;
+
         // Set the width based on a percentage of how much time is remaining
         rectFill.width *= timeRemaining.floatValue / timeMax.floatValue;
+
+        // Draw the filled portion of the progress bar
         EditorGUI.DrawRect(rectFill, Color.white);
 
+        // Use auto-layout to draw a gap of 6 pixels between the timer and the toggles
+        // Our manually drawn Rect will appear in this space
         EditorGUILayout.Space(6);
+        #endregion
 
         #region Draw toggles for ticking and looping
         EditorGUILayout.BeginHorizontal();
