@@ -1,0 +1,9 @@
+This is an end-of-semester extension piece you can do if the learners show extreme interest and confidence in this.
+
+We're going to write a widely usable Attribute to randomise a variety of types.
+
+Open the NPC script from last week and add the new fields
+
+Write the RandomiseAttribute and then Drawer together
+- Discuss how this will be a bit of work upfront with long-term payoff
+- Once done, implement it with the new fields in NPC

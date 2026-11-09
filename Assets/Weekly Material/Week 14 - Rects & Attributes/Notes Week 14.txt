@@ -1,0 +1,41 @@
+Start of lesson:
+- Have learners open the same project as last week, if they have it`
+
+Create the 'StatBlock' script
+- Point out 'System.Serializable' is telling our code this class needs to be Serializable
+
+Create the NPC script, and implement the StatBlock class. Display it in the inspector.
+- The fields take up a huge area when expanded
+- The information is completely gone when collapsed
+
+Let's write a Custom Property Drawer to display this property in a new way
+- Layout functions are not supported here (too CPU heavy)
+- We must use GUI and EditorGUI only
+- This means we must master Rects
+
+Go to the slides, and click through them all.
+
+Come back and write the StatBlockDrawer script.
+- Do not write the 'If not expanded' section at first, skip down and write it at the end
+
+We've been using Attributes like 'Tooltip' and 'SerializeField' for a while now.
+- You might also know about 'Range' - let's try it now
+
+Open the 'NPC' script and add the 'playerRelationshipLevel' float, apply the built-in Range attribute.
+
+Demonstrate how it looks in-editor. We will recreate this to learn how we can make our own attributes.
+
+Start with Custom.RangeAttribute script.
+- Discuss namespaces
+- Here we're using a namespace to distinguish between the built-in Range and our replication of it
+
+In NPC, replace the built-in Range with Custom.Range and show how now, it just draws the default float field.
+
+Now write the Custom.RangeAttributeDrawer. Demonstrate how we have the exact same result as before.
+
+Next, write the RandomName attribute.
+
+Put a text file titled 'NPC Names' in the root Assests folder.
+- write a list of names with new lines between them
+
+Write the RandomNameAttributeDrawer script together.

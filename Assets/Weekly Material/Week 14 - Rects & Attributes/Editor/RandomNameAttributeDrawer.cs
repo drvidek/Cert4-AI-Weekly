@@ -5,7 +5,7 @@ using UnityEditor;
 public class RandomNameAttributeDrawer : PropertyDrawer
 {
     const int buttonWidth = 20;
-    
+
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
     {
         // If the property type is not String, draw an error message.
@@ -22,20 +22,21 @@ public class RandomNameAttributeDrawer : PropertyDrawer
         RandomNameAttribute randomName = attribute as RandomNameAttribute;
 
         // Get a Rect matching the default one
-        Rect rectProperty = new Rect(position);
+        Rect rectProperty = new Rect(position)
+        {
+            // Cut off the width of the button
+            width = position.width - buttonWidth,
+        };
 
-        // Cut off the width of the button
-        rectProperty.width -= buttonWidth;
+        // Get another rect for the button
+        Rect rectButton = new Rect(rectProperty)
+        {
+            // Set the width directly
+            width = buttonWidth,
+            // Position it to the right of the other rect
+            x = rectProperty.max.x
+        };
 
-        // Get another rect
-        Rect rectButton = new Rect(rectProperty);
-
-        // Set the width directly
-        rectButton.width = buttonWidth;
-
-        // Position it to the right of the other rect
-        rectButton.x = rectProperty.max.x;
-        
         // Draw whatever field is appropriate for the property
         EditorGUI.PropertyField(rectProperty, property);
 

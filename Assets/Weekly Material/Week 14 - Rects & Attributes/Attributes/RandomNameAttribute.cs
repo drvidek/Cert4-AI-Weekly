@@ -1,12 +1,18 @@
 using UnityEngine;
+using System.IO;
 
 public class RandomNameAttribute : PropertyAttribute
 {
     // A fallback list of options to use
     public static readonly string[] defaultOptions = new string[] { "Adam", "Brenda", "Clarence", "Din", "Edna" };
 
+    // The file path to the NPC Names text file
+    // Application.dataPath gives the path to the Assets folder for the project
+    public static readonly string filePath = Path.Combine(Application.dataPath, "NPC Names.txt");
+    
     // Load a text asset and split it based on line-breaks
-    public static readonly string[] loadedOptions = Resources.Load<TextAsset>("NPC Names").text.Split('\n');
+    public static readonly string[] loadedOptions = File.ReadAllLines(filePath); //Resources.Load<TextAsset>("NPC Names").text.Split('\n');
+
 
     public string GetRandom()
     {
